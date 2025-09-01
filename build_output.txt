@@ -1,0 +1,598 @@
+Building for debugging...
+[0/6] Write sources
+[1/6] Write swift-version--C03D7E5C630EAB4.txt
+[3/121] Compiling Stripe_Tax_Types Stripe Tax Calculations Types Client.swift
+[4/121] Compiling Stripe_Billing_Types Stripe Billing Customer Portal Configuration Types Client.swift
+[5/121] Compiling Stripe_Billing_Types Stripe Billing Customer Portal Configuration Types.swift
+[6/123] Compiling Stripe_Setup_Attempts_Types Stripe Setup Attempts Types Setup Attempts.swift
+[7/123] Compiling Stripe_Terminal_Types Stripe Terminal Location Types API.swift
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Location Types/Stripe Terminal Location Types API.swift:37:32: error: instance member 'Create' of type 'CasePathable' cannot be used on instance of nested type 'Stripe.Terminal.Locations.API.Router'
+35 |                     Path.terminal
+36 |                     Path.locations
+37 |                     Body(.form(Stripe.Terminal.Locations.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+   |                                `- error: instance member 'Create' of type 'CasePathable' cannot be used on instance of nested type 'Stripe.Terminal.Locations.API.Router'
+38 |                 }
+39 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Location Types/Stripe Terminal Location Types API.swift:37:62: error: value of type 'Stripe.Terminal.Locations.API.Type' has no dynamic member 'Create' using key path from root type 'Stripe.Terminal.Locations.API.AllCasePaths'
+35 |                     Path.terminal
+36 |                     Path.locations
+37 |                     Body(.form(Stripe.Terminal.Locations.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+   |                                                              `- error: value of type 'Stripe.Terminal.Locations.API.Type' has no dynamic member 'Create' using key path from root type 'Stripe.Terminal.Locations.API.AllCasePaths'
+38 |                 }
+39 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Location Types/Stripe Terminal Location Types API.swift:37:69: error: value of type 'Optional<_>' has no member 'Request'
+35 |                     Path.terminal
+36 |                     Path.locations
+37 |                     Body(.form(Stripe.Terminal.Locations.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+   |                                                                     `- error: value of type 'Optional<_>' has no member 'Request'
+38 |                 }
+39 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Location Types/Stripe Terminal Location Types API.swift:37:27: error: generic parameter 'Value' could not be inferred
+35 |                     Path.terminal
+36 |                     Path.locations
+37 |                     Body(.form(Stripe.Terminal.Locations.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+   |                           `- error: generic parameter 'Value' could not be inferred
+38 |                 }
+39 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/.build/checkouts/swift-url-form-coding/Sources/URLFormCodingURLRouting/URLRouting.Conversion.swift:51:24: note: in call to function 'form(_:decoder:encoder:)'
+49 |     /// }
+50 |     /// ```
+51 |     public static func form<Value>(
+   |                        `- note: in call to function 'form(_:decoder:encoder:)'
+52 |         _ type: Value.Type,
+53 |         decoder: Form.Decoder = .init(),
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Location Types/Stripe Terminal Location Types API.swift:37:62: error: generic parameter 'Value' could not be inferred
+35 |                     Path.terminal
+36 |                     Path.locations
+37 |                     Body(.form(Stripe.Terminal.Locations.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+   |                                                              `- error: generic parameter 'Value' could not be inferred
+38 |                 }
+39 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/.build/checkouts/swift-case-paths/Sources/CasePathsCore/CasePathable.swift:390:10: note: in call to 'subscript(dynamicMember:)'
+388 |   /// userActions.compactMap(\.settings)  // [SettingsAction.subscribeButtonTapped]
+389 |   /// ```
+390 |   public subscript<Value>(
+    |          `- note: in call to 'subscript(dynamicMember:)'
+391 |     dynamicMember keyPath: KeyPath<Self.AllCasePaths, AnyCasePath<Self, Value>>
+392 |   ) -> Value? {
+[8/123] Emitting module Stripe_Web_Elements_Types
+[9/123] Compiling Stripe_Setup_Attempts_Types Stripe Setup Attempts Types Client.swift
+[10/123] Compiling Stripe_Setup_Attempts_Types SetupAttempts.swift
+[11/123] Compiling Stripe_Setup_Attempts_Types Stripe Setup Attempts Types API.swift
+[12/123] Emitting module Stripe_Setup_Attempts_Types
+[13/123] Emitting module Stripe_Setup_Intents_Types
+[14/123] Compiling Stripe_Billing_Types Stripe Billing Invoice Items Types API.swift
+[15/123] Compiling Stripe_Billing_Types Stripe Billing Invoice Items Types Billing Invoice Items.swift
+[16/124] Compiling Stripe_Tax_Types Stripe Tax Calculations Types API.swift
+[17/124] Emitting module Stripe_Tax_Types
+[18/124] Compiling Stripe_Billing_Types Stripe Billing Customer Portal Session Types API.swift
+[19/124] Compiling Stripe_Billing_Types Stripe Billing Customer Portal Session Types Client.swift
+[20/124] Compiling Stripe_Billing_Types Stripe Billing Customer Portal Session Types.swift
+[21/126] Compiling Stripe_Reporting_Types ReportRuns.swift
+[22/126] Emitting module Stripe_Reporting_Types
+[23/126] Compiling Stripe_Setup_Intents_Types Stripe Setup Intents Types Setup Intents.swift
+[24/126] Compiling Stripe_Setup_Intents_Types Stripe Setup Intents Types Client.swift
+[25/126] Compiling Stripe_Fraud_Types Stripe Value Lists Types Client.swift
+[27/126] Compiling Stripe_Billing_Types Billing.InvoiceItems.swift
+[28/126] Compiling Stripe_Fraud_Types Stripe Value Lists Types API.swift
+[29/126] Compiling Stripe_Fraud_Types Stripe Value List Items Types.swift
+[34/126] Emitting module Stripe_Fraud_Types
+[35/130] Compiling Stripe_Connect_Types Stripe Connect Transfers Types Client.swift
+[36/130] Compiling Stripe_Connect_Types Stripe Connect Transfers Types.swift
+[37/130] Compiling Stripe_Tax_Types Stripe Tax Calculations Types.swift
+[38/130] Compiling Stripe_Setup_Intents_Types Stripe Setup Intents Types API.swift
+[39/130] Compiling Stripe_Fraud_Types Stripe Value Lists Types.swift
+[40/136] Emitting module Stripe_Terminal_Types
+[41/136] Compiling Stripe_Billing_Types Stripe Billing Quotes Types Client.swift
+[42/136] Compiling Stripe_Billing_Types Billing.SubscriptionItems.swift
+[43/151] Emitting module Stripe_Connect_Types
+[44/151] Compiling Stripe_Payment_Methods_Types PaymentMethods.BankAccounts.swift
+[45/151] Compiling Stripe_Payment_Methods_Types PaymentMethods.Cards.swift
+[46/152] Compiling Stripe_Terminal_Types Stripe Terminal Location Types.swift
+[47/152] Compiling Stripe_Terminal_Types Stripe Terminal Reader Types.swift
+[48/152] Compiling Stripe_Terminal_Types Stripe Terminal Reader Types API.swift
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Reader Types/Stripe Terminal Reader Types API.swift:55:32: error: instance member 'Create' of type 'CasePathable' cannot be used on instance of nested type 'Stripe.Terminal.Readers.API.Router'
+ 53 |                     Path.terminal
+ 54 |                     Path.readers
+ 55 |                     Body(.form(Stripe.Terminal.Readers.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+    |                                `- error: instance member 'Create' of type 'CasePathable' cannot be used on instance of nested type 'Stripe.Terminal.Readers.API.Router'
+ 56 |                 }
+ 57 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Reader Types/Stripe Terminal Reader Types API.swift:55:60: error: value of type 'Stripe.Terminal.Readers.API.Type' has no dynamic member 'Create' using key path from root type 'Stripe.Terminal.Readers.API.AllCasePaths'
+ 53 |                     Path.terminal
+ 54 |                     Path.readers
+ 55 |                     Body(.form(Stripe.Terminal.Readers.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+    |                                                            `- error: value of type 'Stripe.Terminal.Readers.API.Type' has no dynamic member 'Create' using key path from root type 'Stripe.Terminal.Readers.API.AllCasePaths'
+ 56 |                 }
+ 57 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Reader Types/Stripe Terminal Reader Types API.swift:55:67: error: value of type 'Optional<_>' has no member 'Request'
+ 53 |                     Path.terminal
+ 54 |                     Path.readers
+ 55 |                     Body(.form(Stripe.Terminal.Readers.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+    |                                                                   `- error: value of type 'Optional<_>' has no member 'Request'
+ 56 |                 }
+ 57 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Reader Types/Stripe Terminal Reader Types API.swift:55:27: error: generic parameter 'Value' could not be inferred
+ 53 |                     Path.terminal
+ 54 |                     Path.readers
+ 55 |                     Body(.form(Stripe.Terminal.Readers.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+    |                           `- error: generic parameter 'Value' could not be inferred
+ 56 |                 }
+ 57 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/.build/checkouts/swift-url-form-coding/Sources/URLFormCodingURLRouting/URLRouting.Conversion.swift:51:24: note: in call to function 'form(_:decoder:encoder:)'
+49 |     /// }
+50 |     /// ```
+51 |     public static func form<Value>(
+   |                        `- note: in call to function 'form(_:decoder:encoder:)'
+52 |         _ type: Value.Type,
+53 |         decoder: Form.Decoder = .init(),
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Terminal Types/Stripe Terminal Reader Types/Stripe Terminal Reader Types API.swift:55:60: error: generic parameter 'Value' could not be inferred
+ 53 |                     Path.terminal
+ 54 |                     Path.readers
+ 55 |                     Body(.form(Stripe.Terminal.Readers.API.Create.Request.self, decoder: .stripe, encoder: .stripe))
+    |                                                            `- error: generic parameter 'Value' could not be inferred
+ 56 |                 }
+ 57 |                 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/.build/checkouts/swift-case-paths/Sources/CasePathsCore/CasePathable.swift:390:10: note: in call to 'subscript(dynamicMember:)'
+388 |   /// userActions.compactMap(\.settings)  // [SettingsAction.subscribeButtonTapped]
+389 |   /// ```
+390 |   public subscript<Value>(
+    |          `- note: in call to 'subscript(dynamicMember:)'
+391 |     dynamicMember keyPath: KeyPath<Self.AllCasePaths, AnyCasePath<Self, Value>>
+392 |   ) -> Value? {
+[49/153] Compiling Stripe_Refunds_Types Stripe Refunds Types Refunds.swift
+[50/153] Compiling Stripe_Refunds_Types Stripe Refunds Types Client.swift
+[51/153] Compiling Stripe_Refunds_Types Stripe Refunds Types API.swift
+[52/153] Emitting module Stripe_Refunds_Types
+[53/153] Compiling Stripe_Terminal_Types Stripe Terminal Location Types Client.swift
+[54/153] Compiling Stripe_Payment_Methods_Types Stripe Payment Methods Sources Types Client.swift
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:6:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+ 4 | import Dependencies
+ 5 | 
+ 6 | extension Stripe.PaymentMethods.Sources {
+   |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+ 7 |     @DependencyClient
+ 8 |     public struct Client: Sendable {
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:32:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+30 | 
+31 | // MARK: - Convenience methods
+32 | extension Stripe.PaymentMethods.Sources.Client {
+   |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+33 |     public func update(
+34 |         id: Source.ID,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:11:50: error: cannot find type 'Create' in scope
+ 9 |         // https://docs.stripe.com/api/sources/create.md
+10 |         @DependencyEndpoint
+11 |         public var create: @Sendable (_ request: Create.Request) async throws -> Source
+   |                                                  `- error: cannot find type 'Create' in scope
+12 |         
+13 |         // https://docs.stripe.com/api/sources/retrieve.md
+
+macro expansion @DependencyEndpoint:2:40: error: cannot find type 'Create' in scope
+`- /Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:11:88: note: expanded code originates here
+ 9 |         // https://docs.stripe.com/api/sources/create.md
+10 |         @DependencyEndpoint
+11 |         public var create: @Sendable (_ request: Create.Request) async throws -> Source
+   +--- macro expansion @DependencyEndpoint ----------------------------
+   | 1 | @Sendable
+   | 2 |         public func create(request p0: Create.Request) async throws -> Source {
+   |   |                                        `- error: cannot find type 'Create' in scope
+   | 3 |     try await self.create(p0)
+   | 4 | }
+   +--------------------------------------------------------------------
+12 |         
+13 |         // https://docs.stripe.com/api/sources/retrieve.md
+
+macro expansion @DependencyEndpoint:7:52: error: cannot find type 'Create' in scope
+`- /Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:11:88: note: expanded code originates here
+ 9 |         // https://docs.stripe.com/api/sources/create.md
+10 |         @DependencyEndpoint
+11 |         public var create: @Sendable (_ request: Create.Request) async throws -> Source
+   +--- macro expansion @DependencyEndpoint ----------------------------
+   | 5 | 
+   | 6 | // https://docs.stripe.com/api/sources/create.md
+   | 7 |         private var _create: @Sendable (_ request: Create.Request) async throws -> Source = { _ in
+   |   |                                                    `- error: cannot find type 'Create' in scope
+   | 8 |     IssueReporting.reportIssue("Unimplemented: '\(Self.self).create'")
+   | 9 |     throw DependenciesMacros.Unimplemented("create")
+   +--------------------------------------------------------------------
+12 |         
+13 |         // https://docs.stripe.com/api/sources/retrieve.md
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:19:67: error: cannot find type 'Update' in scope
+17 |         // https://docs.stripe.com/api/sources/update.md
+18 |         @DependencyEndpoint
+19 |         public var update: @Sendable (_ id: Source.ID, _ request: Update.Request) async throws -> Source
+   |                                                                   `- error: cannot find type 'Update' in scope
+20 |         
+21 |         // https://docs.stripe.com/api/sources/attach.md
+
+macro expansion @DependencyEndpoint:2:58: error: cannot find type 'Update' in scope
+`- /Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:19:105: note: expanded code originates here
+17 |         // https://docs.stripe.com/api/sources/update.md
+18 |         @DependencyEndpoint
+19 |         public var update: @Sendable (_ id: Source.ID, _ request: Update.Request) async throws -> Source
+   +--- macro expansion @DependencyEndpoint ----------------------------
+   | 1 | @Sendable
+   | 2 |         public func update(id p0: Source.ID, request p1: Update.Request) async throws -> Source {
+   |   |                                                          `- error: cannot find type 'Update' in scope
+   | 3 |     try await self.update(p0, p1)
+   | 4 | }
+   +--------------------------------------------------------------------
+20 |         
+21 |         // https://docs.stripe.com/api/sources/attach.md
+
+macro expansion @DependencyEndpoint:7:69: error: cannot find type 'Update' in scope
+`- /Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:19:105: note: expanded code originates here
+17 |         // https://docs.stripe.com/api/sources/update.md
+18 |         @DependencyEndpoint
+19 |         public var update: @Sendable (_ id: Source.ID, _ request: Update.Request) async throws -> Source
+   +--- macro expansion @DependencyEndpoint ----------------------------
+   | 5 | 
+   | 6 | // https://docs.stripe.com/api/sources/update.md
+   | 7 |         private var _update: @Sendable (_ id: Source.ID, _ request: Update.Request) async throws -> Source = { _, _ in
+   |   |                                                                     `- error: cannot find type 'Update' in scope
+   | 8 |     IssueReporting.reportIssue("Unimplemented: '\(Self.self).update'")
+   | 9 |     throw DependenciesMacros.Unimplemented("update")
+   +--------------------------------------------------------------------
+20 |         
+21 |         // https://docs.stripe.com/api/sources/attach.md
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:37:38: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+35 |         amount: Int? = nil,
+36 |         metadata: [String: String]? = nil,
+37 |         owner: Stripe.PaymentMethods.Sources.Owner? = nil,
+   |                                      `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+38 |         sourceOrder: Stripe.PaymentMethods.Sources.SourceOrder? = nil
+39 |     ) async throws -> Source {
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types Client.swift:38:44: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+36 |         metadata: [String: String]? = nil,
+37 |         owner: Stripe.PaymentMethods.Sources.Owner? = nil,
+38 |         sourceOrder: Stripe.PaymentMethods.Sources.SourceOrder? = nil
+   |                                            `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+39 |     ) async throws -> Source {
+40 |         try await self.update(
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+[55/153] Compiling Stripe_Payment_Methods_Types Stripe Payment Methods Sources Types.swift
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:5:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+  3 | import Stripe_Types_Shared
+  4 | 
+  5 | extension Stripe.PaymentMethods.Sources {
+    |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+  6 |     // https://docs.stripe.com/api/sources/create.md
+  7 |     public enum Create {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:14:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+ 12 | 
+ 13 | // MARK: - Create Request
+ 14 | extension Stripe.PaymentMethods.Sources.Create {
+    |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+ 15 |     public struct Request: Codable, Equatable, Sendable {
+ 16 |         /// The type of the source to create (required)
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:104:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+102 | 
+103 | // MARK: - Update Request
+104 | extension Stripe.PaymentMethods.Sources.Update {
+    |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+105 |     public struct Request: Codable, Equatable, Sendable {
+106 |         /// Amount associated with the source
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:146:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+144 | 
+145 | // MARK: - Shared Types
+146 | extension Stripe.PaymentMethods.Sources {
+    |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+147 |     public typealias Owner = Stripe.PaymentMethods.Sources.Create.Owner
+148 |     public typealias Mandate = Stripe.PaymentMethods.Sources.Create.Mandate
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:154:33: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+152 | }
+153 | 
+154 | extension Stripe.PaymentMethods.Sources.Create {
+    |                                 `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+155 |     public struct Owner: Codable, Equatable, Sendable {
+156 |         public let address: Address?
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:29:29: error: cannot find type 'Mandate' in scope
+ 27 |         
+ 28 |         /// Mandate information for bank debits
+ 29 |         public let mandate: Mandate?
+    |                             `- error: cannot find type 'Mandate' in scope
+ 30 |         
+ 31 |         /// Key-value pairs for additional information
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:35:27: error: cannot find type 'Owner' in scope
+ 33 |         
+ 34 |         /// Information about payment instrument owner
+ 35 |         public let owner: Owner?
+    |                           `- error: cannot find type 'Owner' in scope
+ 36 |         
+ 37 |         /// Parameters for receiver flow
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:38:30: error: cannot find type 'Receiver' in scope
+ 36 |         
+ 37 |         /// Parameters for receiver flow
+ 38 |         public let receiver: Receiver?
+    |                              `- error: cannot find type 'Receiver' in scope
+ 39 |         
+ 40 |         /// Parameters for redirect flow
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:41:30: error: cannot find type 'Redirect' in scope
+ 39 |         
+ 40 |         /// Parameters for redirect flow
+ 41 |         public let redirect: Redirect?
+    |                              `- error: cannot find type 'Redirect' in scope
+ 42 |         
+ 43 |         /// Items and shipping information
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:44:33: error: cannot find type 'SourceOrder' in scope
+ 42 |         
+ 43 |         /// Items and shipping information
+ 44 |         public let sourceOrder: SourceOrder?
+    |                                 `- error: cannot find type 'SourceOrder' in scope
+ 45 |         
+ 46 |         /// Text to display on customer's statement
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:76:22: error: cannot find type 'Mandate' in scope
+ 74 |             currency: Stripe.Currency? = nil,
+ 75 |             flow: String? = nil,
+ 76 |             mandate: Mandate? = nil,
+    |                      `- error: cannot find type 'Mandate' in scope
+ 77 |             metadata: [String: String]? = nil,
+ 78 |             owner: Owner? = nil,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:78:20: error: cannot find type 'Owner' in scope
+ 76 |             mandate: Mandate? = nil,
+ 77 |             metadata: [String: String]? = nil,
+ 78 |             owner: Owner? = nil,
+    |                    `- error: cannot find type 'Owner' in scope
+ 79 |             receiver: Receiver? = nil,
+ 80 |             redirect: Redirect? = nil,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:79:23: error: cannot find type 'Receiver' in scope
+ 77 |             metadata: [String: String]? = nil,
+ 78 |             owner: Owner? = nil,
+ 79 |             receiver: Receiver? = nil,
+    |                       `- error: cannot find type 'Receiver' in scope
+ 80 |             redirect: Redirect? = nil,
+ 81 |             sourceOrder: SourceOrder? = nil,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:80:23: error: cannot find type 'Redirect' in scope
+ 78 |             owner: Owner? = nil,
+ 79 |             receiver: Receiver? = nil,
+ 80 |             redirect: Redirect? = nil,
+    |                       `- error: cannot find type 'Redirect' in scope
+ 81 |             sourceOrder: SourceOrder? = nil,
+ 82 |             statementDescriptor: Stripe.StatementDescriptor? = nil,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:81:26: error: cannot find type 'SourceOrder' in scope
+ 79 |             receiver: Receiver? = nil,
+ 80 |             redirect: Redirect? = nil,
+ 81 |             sourceOrder: SourceOrder? = nil,
+    |                          `- error: cannot find type 'SourceOrder' in scope
+ 82 |             statementDescriptor: Stripe.StatementDescriptor? = nil,
+ 83 |             token: String? = nil,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:110:29: error: cannot find type 'Mandate' in scope
+108 |         
+109 |         /// Mandate information for bank debits
+110 |         public let mandate: Mandate?
+    |                             `- error: cannot find type 'Mandate' in scope
+111 |         
+112 |         /// Key-value pairs for additional structured information
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:116:27: error: cannot find type 'Owner' in scope
+114 |         
+115 |         /// Payment instrument owner details
+116 |         public let owner: Owner?
+    |                           `- error: cannot find type 'Owner' in scope
+117 |         
+118 |         /// Order and shipping information
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:119:33: error: cannot find type 'SourceOrder' in scope
+117 |         
+118 |         /// Order and shipping information
+119 |         public let sourceOrder: SourceOrder?
+    |                                 `- error: cannot find type 'SourceOrder' in scope
+120 |         
+121 |         private enum CodingKeys: String, CodingKey {
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:131:22: error: cannot find type 'Mandate' in scope
+129 |         public init(
+130 |             amount: Int? = nil,
+131 |             mandate: Mandate? = nil,
+    |                      `- error: cannot find type 'Mandate' in scope
+132 |             metadata: [String: String]? = nil,
+133 |             owner: Owner? = nil,
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:133:20: error: cannot find type 'Owner' in scope
+131 |             mandate: Mandate? = nil,
+132 |             metadata: [String: String]? = nil,
+133 |             owner: Owner? = nil,
+    |                    `- error: cannot find type 'Owner' in scope
+134 |             sourceOrder: SourceOrder? = nil
+135 |         ) {
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:134:26: error: cannot find type 'SourceOrder' in scope
+132 |             metadata: [String: String]? = nil,
+133 |             owner: Owner? = nil,
+134 |             sourceOrder: SourceOrder? = nil
+    |                          `- error: cannot find type 'SourceOrder' in scope
+135 |         ) {
+136 |             self.amount = amount
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:147:52: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+145 | // MARK: - Shared Types
+146 | extension Stripe.PaymentMethods.Sources {
+147 |     public typealias Owner = Stripe.PaymentMethods.Sources.Create.Owner
+    |                                                    `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+148 |     public typealias Mandate = Stripe.PaymentMethods.Sources.Create.Mandate
+149 |     public typealias Receiver = Stripe.PaymentMethods.Sources.Create.Receiver
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:148:54: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+146 | extension Stripe.PaymentMethods.Sources {
+147 |     public typealias Owner = Stripe.PaymentMethods.Sources.Create.Owner
+148 |     public typealias Mandate = Stripe.PaymentMethods.Sources.Create.Mandate
+    |                                                      `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+149 |     public typealias Receiver = Stripe.PaymentMethods.Sources.Create.Receiver
+150 |     public typealias Redirect = Stripe.PaymentMethods.Sources.Create.Redirect
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:149:55: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+147 |     public typealias Owner = Stripe.PaymentMethods.Sources.Create.Owner
+148 |     public typealias Mandate = Stripe.PaymentMethods.Sources.Create.Mandate
+149 |     public typealias Receiver = Stripe.PaymentMethods.Sources.Create.Receiver
+    |                                                       `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+150 |     public typealias Redirect = Stripe.PaymentMethods.Sources.Create.Redirect
+151 |     public typealias SourceOrder = Stripe.PaymentMethods.Sources.Create.SourceOrder
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:150:55: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+148 |     public typealias Mandate = Stripe.PaymentMethods.Sources.Create.Mandate
+149 |     public typealias Receiver = Stripe.PaymentMethods.Sources.Create.Receiver
+150 |     public typealias Redirect = Stripe.PaymentMethods.Sources.Create.Redirect
+    |                                                       `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+151 |     public typealias SourceOrder = Stripe.PaymentMethods.Sources.Create.SourceOrder
+152 | }
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Payment Methods Types/Stripe Payment Methods Sources Types/Stripe Payment Methods Sources Types.swift:151:58: error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+149 |     public typealias Receiver = Stripe.PaymentMethods.Sources.Create.Receiver
+150 |     public typealias Redirect = Stripe.PaymentMethods.Sources.Create.Redirect
+151 |     public typealias SourceOrder = Stripe.PaymentMethods.Sources.Create.SourceOrder
+    |                                                          `- error: 'Sources' is not a member type of enum 'Stripe_Types_Shared.Stripe.PaymentMethods'
+152 | }
+153 | 
+
+/Users/coen/Developer/coenttb/swift-stripe-types/Sources/Stripe Types Shared/Stripe Namespaces.swift:35:17: note: 'PaymentMethods' declared here
+ 33 |     
+ 34 |     // MARK: - Payment Methods
+ 35 |     public enum PaymentMethods: Sendable {}
+    |                 `- note: 'PaymentMethods' declared here
+ 36 |     public enum PaymentMethodConfigurations: Sendable {}
+ 37 |     public enum PaymentMethodDomains: Sendable {}
+[56/153] Emitting module Stripe_Payouts_Types
+[57/153] Compiling Stripe_Payouts_Types Stripe Payouts Types Client.swift
+[58/153] Compiling Stripe_Payouts_Types Stripe Payouts Types Payouts.swift
+[59/153] Compiling Stripe_Products_Types Stripe Products Prices Types Client.swift
+[60/153] Compiling Stripe_Products_Types Stripe Products Types Client.swift
+[61/153] Compiling Stripe_Products_Types Stripe Products Products Types Client.swift
+[65/153] Compiling Stripe_Billing_Types Stripe Billing Invoice Items Types Client.swift
+[66/153] Compiling Stripe_Billing_Types Stripe Billing Invoice Line Item Types API.swift
+[67/153] Compiling Stripe_Billing_Types Stripe Billing Plans Types Client.swift

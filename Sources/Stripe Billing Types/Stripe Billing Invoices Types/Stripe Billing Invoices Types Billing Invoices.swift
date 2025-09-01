@@ -1,0 +1,304 @@
+//
+//  Stripe Billing Invoices Types Billing Invoices.swift
+//  swift-stripe-types
+//
+//  Created by Coen ten Thije Boonkkamp on 13/01/2025.
+//
+
+import Foundation
+import Stripe_Types_Models
+import Stripe_Types_Shared
+
+extension Stripe.Billing.Invoices {
+    // https://docs.stripe.com/api/invoices/create.md
+    public enum Create {}
+    
+    // https://docs.stripe.com/api/invoices/create_preview.md
+    public enum CreatePreview {}
+    
+    // https://docs.stripe.com/api/invoices/update.md
+    public enum Update {}
+    
+    // https://docs.stripe.com/api/invoices/list.md
+    public enum List {}
+    
+    // https://docs.stripe.com/api/invoices/finalize_invoice.md
+    public enum Finalize {}
+    
+    // https://docs.stripe.com/api/invoices/pay.md
+    public enum Pay {}
+    
+    // https://docs.stripe.com/api/invoices/send.md
+    public enum Send {}
+    
+    // https://docs.stripe.com/api/invoices/void.md
+    public enum Void {}
+}
+
+// MARK: - Create
+extension Stripe.Billing.Invoices.Create {
+    public struct Request: Codable, Equatable, Sendable {
+        /// The ID of the customer to invoice
+        public let customer: Stripe.Customers.Customer.ID?
+        /// Controls whether Stripe performs automatic collection of the invoice
+        public let autoAdvance: Bool?
+        /// Collection method: charge_automatically or send_invoice
+        public let collectionMethod: Stripe.Billing.Invoice.CollectionMethod?
+        /// Three-letter ISO currency code
+        public let currency: String?
+        /// An arbitrary string attached to the object
+        public let description: String?
+        /// Invoice payment due date (timestamp)
+        public let dueDate: Date?
+        /// Set of key-value pairs for metadata
+        public let metadata: [String: String]?
+        /// The ID of the subscription to invoice
+        public let subscription: Stripe.Billing.Subscription.ID?
+        
+        private enum CodingKeys: String, CodingKey {
+            case customer
+            case autoAdvance = "auto_advance"
+            case collectionMethod = "collection_method"
+            case currency
+            case description
+            case dueDate = "due_date"
+            case metadata
+            case subscription
+        }
+        
+        public init(
+            customer: Stripe.Customers.Customer.ID? = nil,
+            autoAdvance: Bool? = nil,
+            collectionMethod: Stripe.Billing.Invoice.CollectionMethod? = nil,
+            currency: String? = nil,
+            description: String? = nil,
+            dueDate: Date? = nil,
+            metadata: [String: String]? = nil,
+            subscription: Stripe.Billing.Subscription.ID? = nil
+        ) {
+            self.customer = customer
+            self.autoAdvance = autoAdvance
+            self.collectionMethod = collectionMethod
+            self.currency = currency
+            self.description = description
+            self.dueDate = dueDate
+            self.metadata = metadata
+            self.subscription = subscription
+        }
+    }
+}
+
+// MARK: - CreatePreview
+extension Stripe.Billing.Invoices.CreatePreview {
+    public struct Request: Codable, Equatable, Sendable {
+        /// The ID of the customer to preview invoice for
+        public let customer: Stripe.Customers.Customer.ID?
+        /// Collection method: charge_automatically or send_invoice
+        public let collectionMethod: Stripe.Billing.Invoice.CollectionMethod?
+        /// Three-letter ISO currency code
+        public let currency: String?
+        /// An arbitrary string attached to the object
+        public let description: String?
+        /// The ID of the subscription to preview
+        public let subscription: Stripe.Billing.Subscription.ID?
+        
+        private enum CodingKeys: String, CodingKey {
+            case customer
+            case collectionMethod = "collection_method"
+            case currency
+            case description
+            case subscription
+        }
+        
+        public init(
+            customer: Stripe.Customers.Customer.ID? = nil,
+            collectionMethod: Stripe.Billing.Invoice.CollectionMethod? = nil,
+            currency: String? = nil,
+            description: String? = nil,
+            subscription: Stripe.Billing.Subscription.ID? = nil
+        ) {
+            self.customer = customer
+            self.collectionMethod = collectionMethod
+            self.currency = currency
+            self.description = description
+            self.subscription = subscription
+        }
+    }
+}
+
+// MARK: - Update
+extension Stripe.Billing.Invoices.Update {
+    public struct Request: Codable, Equatable, Sendable {
+        /// Controls whether Stripe performs automatic collection of the invoice
+        public let autoAdvance: Bool?
+        /// Collection method: charge_automatically or send_invoice
+        public let collectionMethod: Stripe.Billing.Invoice.CollectionMethod?
+        /// An arbitrary string attached to the object
+        public let description: String?
+        /// Invoice payment due date (timestamp)
+        public let dueDate: Date?
+        /// Set of key-value pairs for metadata
+        public let metadata: [String: String]?
+        
+        private enum CodingKeys: String, CodingKey {
+            case autoAdvance = "auto_advance"
+            case collectionMethod = "collection_method"
+            case description
+            case dueDate = "due_date"
+            case metadata
+        }
+        
+        public init(
+            autoAdvance: Bool? = nil,
+            collectionMethod: Stripe.Billing.Invoice.CollectionMethod? = nil,
+            description: String? = nil,
+            dueDate: Date? = nil,
+            metadata: [String: String]? = nil
+        ) {
+            self.autoAdvance = autoAdvance
+            self.collectionMethod = collectionMethod
+            self.description = description
+            self.dueDate = dueDate
+            self.metadata = metadata
+        }
+    }
+}
+
+// MARK: - List
+extension Stripe.Billing.Invoices.List {
+    public struct Request: Codable, Equatable, Sendable {
+        /// Collection method filter
+        public let collectionMethod: Stripe.Billing.Invoice.CollectionMethod?
+        /// Filter for invoices created in date range
+        public let created: Stripe.DateFilter?
+        /// Filter by customer ID
+        public let customer: Stripe.Customers.Customer.ID?
+        /// Filter for invoices due in date range
+        public let dueDate: Stripe.DateFilter?
+        /// A cursor for pagination
+        public let endingBefore: String?
+        /// Limit on the number of objects to return
+        public let limit: Int?
+        /// A cursor for pagination
+        public let startingAfter: String?
+        /// Filter by invoice status
+        public let status: Stripe.Billing.Invoice.Status?
+        /// Filter by subscription ID
+        public let subscription: Stripe.Billing.Subscription.ID?
+        
+        private enum CodingKeys: String, CodingKey {
+            case collectionMethod = "collection_method"
+            case created
+            case customer
+            case dueDate = "due_date"
+            case endingBefore = "ending_before"
+            case limit
+            case startingAfter = "starting_after"
+            case status
+            case subscription
+        }
+        
+        public init(
+            collectionMethod: Stripe.Billing.Invoice.CollectionMethod? = nil,
+            created: Stripe.DateFilter? = nil,
+            customer: Stripe.Customers.Customer.ID? = nil,
+            dueDate: Stripe.DateFilter? = nil,
+            endingBefore: String? = nil,
+            limit: Int? = nil,
+            startingAfter: String? = nil,
+            status: Stripe.Billing.Invoice.Status? = nil,
+            subscription: Stripe.Billing.Subscription.ID? = nil
+        ) {
+            self.collectionMethod = collectionMethod
+            self.created = created
+            self.customer = customer
+            self.dueDate = dueDate
+            self.endingBefore = endingBefore
+            self.limit = limit
+            self.startingAfter = startingAfter
+            self.status = status
+            self.subscription = subscription
+        }
+    }
+    
+    public struct Response: Codable, Sendable {
+        public let object: String
+        public let url: String
+        public let hasMore: Bool
+        public let data: [Stripe.Billing.Invoice]
+        
+        private enum CodingKeys: String, CodingKey {
+            case object
+            case url
+            case hasMore = "has_more"
+            case data
+        }
+        
+        public init(
+            object: String,
+            url: String,
+            hasMore: Bool,
+            data: [Stripe.Billing.Invoice]
+        ) {
+            self.object = object
+            self.url = url
+            self.hasMore = hasMore
+            self.data = data
+        }
+    }
+}
+
+// MARK: - Finalize
+extension Stripe.Billing.Invoices.Finalize {
+    public struct Request: Codable, Equatable, Sendable {
+        /// Controls whether Stripe performs automatic collection of the invoice
+        public let autoAdvance: Bool?
+        
+        private enum CodingKeys: String, CodingKey {
+            case autoAdvance = "auto_advance"
+        }
+        
+        public init(autoAdvance: Bool? = nil) {
+            self.autoAdvance = autoAdvance
+        }
+    }
+}
+
+// MARK: - Pay
+extension Stripe.Billing.Invoices.Pay {
+    public struct Request: Codable, Equatable, Sendable {
+        /// ID of the payment method to use for payment
+        public let paymentMethod: Stripe.PaymentMethods.PaymentMethod.ID?
+        /// ID of the payment source to use for payment
+        public let source: String?
+        
+        private enum CodingKeys: String, CodingKey {
+            case paymentMethod = "payment_method"
+            case source
+        }
+        
+        public init(
+            paymentMethod: Stripe.PaymentMethods.PaymentMethod.ID? = nil,
+            source: String? = nil
+        ) {
+            self.paymentMethod = paymentMethod
+            self.source = source
+        }
+    }
+}
+
+// MARK: - Send
+extension Stripe.Billing.Invoices.Send {
+    public struct Request: Codable, Equatable, Sendable {
+        // Send endpoint typically has no required parameters
+        public init() {}
+    }
+}
+
+// MARK: - Void
+extension Stripe.Billing.Invoices.Void {
+    public struct Request: Codable, Equatable, Sendable {
+        // Void endpoint typically has no required parameters
+        public init() {}
+    }
+}
