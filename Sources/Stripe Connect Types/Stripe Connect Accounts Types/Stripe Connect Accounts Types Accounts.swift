@@ -125,7 +125,7 @@ extension Stripe.Connect.Accounts.Create {
             }
             
             public struct OwnershipDeclarationParam: Codable, Equatable, Sendable {
-                public var date: Int?
+                public var date: Date?
                 public var ip: String?
                 public var userAgent: String?
                 
@@ -220,7 +220,7 @@ extension Stripe.Connect.Accounts.Create {
         }
         
         public struct TOSAcceptanceParam: Codable, Equatable, Sendable {
-            public var date: Int?
+            public var date: Date?
             public var ip: String?
             public var userAgent: String?
             
@@ -260,7 +260,7 @@ extension Stripe.Connect.Accounts.Create {
             
             public struct AnnualRevenueParam: Codable, Equatable, Sendable {
                 public var amount: Int?
-                public var currency: String?
+                public var currency: Stripe.Currency?
                 public var fiscalYearEnd: String?
                 
                 private enum CodingKeys: String, CodingKey {
@@ -272,7 +272,7 @@ extension Stripe.Connect.Accounts.Create {
             
             public struct MonthlyEstimatedRevenueParam: Codable, Equatable, Sendable {
                 public var amount: Int?
-                public var currency: String?
+                public var currency: Stripe.Currency?
             }
         }
         
@@ -455,7 +455,7 @@ extension Stripe.Connect.Accounts.Create {
                 }
                 
                 public struct TOSAcceptanceParam: Codable, Equatable, Sendable {
-                    public var date: Int?
+                    public var date: Date?
                     public var ip: String?
                     public var userAgent: String?
                     
@@ -588,7 +588,7 @@ extension Stripe.Connect.Accounts.Create {
                 }
                 
                 public struct TOSAcceptanceParam: Codable, Equatable, Sendable {
-                    public var date: Int?
+                    public var date: Date?
                     public var ip: String?
                     public var userAgent: String?
                     

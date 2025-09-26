@@ -180,7 +180,7 @@ extension Stripe.PaymentIntents.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let paymentIntents = Path {
+    public static let paymentIntents = Path {
         "payment_intents"
     }
 }

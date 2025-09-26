@@ -95,7 +95,7 @@ extension Stripe.Fraud.ValueLists.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let valueLists = Path {
+    public static let valueLists = Path {
         "value_lists"
     }
 }

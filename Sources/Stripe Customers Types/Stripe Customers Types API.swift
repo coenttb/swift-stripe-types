@@ -130,6 +130,6 @@ extension Stripe.Customers.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) package static let customers = Path { "customers" }
-    nonisolated(unsafe) package static let search = Path { "search" }
+    package static let customers = Path { "customers" }
+    package static let search = Path { "search" }
 }

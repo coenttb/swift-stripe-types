@@ -12,8 +12,6 @@ import TypesFoundation
 import UnixEpochParsing
 import URLRouting
 
-import Stripe_Payment_Link_Types
-
 // This wrapper module directly uses the API from Stripe_Payment_Link_Types
 // No additional wrapping needed since PaymentLinks is already the namespace
 public typealias API = Stripe.PaymentLinks.API

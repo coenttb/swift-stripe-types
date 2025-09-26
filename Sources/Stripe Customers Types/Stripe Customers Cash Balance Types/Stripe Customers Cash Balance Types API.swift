@@ -44,7 +44,7 @@ extension Stripe.Customers.CashBalance.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let cashBalance = Path {
+    public static let cashBalance = Path {
         "cash_balance"
     }
 }

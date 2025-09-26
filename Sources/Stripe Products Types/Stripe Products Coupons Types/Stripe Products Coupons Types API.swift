@@ -86,7 +86,7 @@ extension Stripe.Products.Coupons.API {
 
 // Add path extensions for Coupons
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let coupons = Path {
+    public static let coupons = Path {
         "coupons"
     }
 }

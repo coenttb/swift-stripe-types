@@ -91,7 +91,7 @@ extension Stripe.Customers.Cards.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let cards = Path {
+    public static let cards = Path {
         "cards"
     }
 }

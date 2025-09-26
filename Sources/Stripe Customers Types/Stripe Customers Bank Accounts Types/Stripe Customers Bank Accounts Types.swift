@@ -64,7 +64,7 @@ extension Stripe.Customers.BankAccounts.Create {
             /// The country in which the bank account is located.
             public let country: String
             /// The currency the bank account is in.
-            public let currency: String
+            public let currency: Stripe.Currency
             /// The name of the person or business that owns the bank account.
             public let accountHolderName: String?
             /// The type of entity that holds the account.
@@ -85,7 +85,7 @@ extension Stripe.Customers.BankAccounts.Create {
             public init(
                 accountNumber: String,
                 country: String,
-                currency: String,
+                currency: Stripe.Currency,
                 accountHolderName: String? = nil,
                 accountHolderType: BankAccountHolderType? = nil,
                 routingNumber: String? = nil
@@ -113,7 +113,7 @@ extension Stripe.Customers.BankAccounts.Create {
                 let container = try decoder.container(keyedBy: CodingKeys.self)
                 self.accountNumber = try container.decode(String.self, forKey: .accountNumber)
                 self.country = try container.decode(String.self, forKey: .country)
-                self.currency = try container.decode(String.self, forKey: .currency)
+                self.currency = try container.decode(Stripe.Currency.self, forKey: .currency)
                 self.accountHolderName = try container.decodeIfPresent(String.self, forKey: .accountHolderName)
                 self.accountHolderType = try container.decodeIfPresent(BankAccountHolderType.self, forKey: .accountHolderType)
                 self.routingNumber = try container.decodeIfPresent(String.self, forKey: .routingNumber)

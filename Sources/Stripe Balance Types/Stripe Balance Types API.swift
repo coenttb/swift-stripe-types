@@ -38,7 +38,7 @@ extension Stripe.Balance.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let balance = Path {
+    public static let balance = Path {
         "balance"
     }
 }

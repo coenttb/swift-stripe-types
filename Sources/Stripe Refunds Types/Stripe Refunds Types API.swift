@@ -97,10 +97,10 @@ extension Stripe.Refunds.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let refunds = Path {
+    public static let refunds = Path {
         "refunds"
     }
-    nonisolated(unsafe) public static let cancel = Path {
+    public static let cancel = Path {
         "cancel"
     }
 }

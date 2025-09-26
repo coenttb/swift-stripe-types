@@ -65,7 +65,7 @@ extension Stripe.Billing.Credit {
             
             public struct Monetary: Codable, Equatable, Sendable {
                 /// Three-letter ISO currency code.
-                public let currency: String
+                public let currency: Stripe.Currency
                 
                 /// A positive integer.
                 public let value: Int

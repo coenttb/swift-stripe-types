@@ -102,7 +102,7 @@ extension Stripe.PaymentLinks.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let paymentLinks = Path {
+    public static let paymentLinks = Path {
         "payment_links"
     }
 }

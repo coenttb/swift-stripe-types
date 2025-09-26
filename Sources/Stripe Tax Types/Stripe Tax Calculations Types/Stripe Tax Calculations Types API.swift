@@ -74,15 +74,15 @@ extension Stripe.Tax.Calculations.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let tax = Path {
+    public static let tax = Path {
         "tax"
     }
     
-    nonisolated(unsafe) public static let calculations = Path {
+    public static let calculations = Path {
         "calculations"
     }
     
-    nonisolated(unsafe) public static let lineItems = Path {
+    public static let lineItems = Path {
         "line_items"
     }
 }

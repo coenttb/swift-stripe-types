@@ -92,7 +92,7 @@ extension Stripe.FileLinks.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let fileLinks = Path {
+    public static let fileLinks = Path {
         "file_links"
     }
 }

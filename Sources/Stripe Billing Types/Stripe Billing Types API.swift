@@ -37,7 +37,7 @@ extension Stripe.Billing {
 //    case quote(Stripe.Billing.Quote.API)
         case subscriptions(Stripe.Billing.Subscriptions.API)
 //    case subscription_Items(Stripe.Billing.Subscription_Items.API)
-//    case subscription_Schedule(Stripe.Billing.Subscription_Schedule.API)
+        case subscriptionSchedule(Stripe.Billing.Subscription.Schedule.API)
 //    case tax_IDs(Stripe.Billing.Tax_IDs.API)
 //    case test_Clocks(Stripe.Billing.Test_Clocks.API)
 //    case usage_Records(Stripe.Billing.Usage_Records.API)
@@ -57,6 +57,10 @@ extension Stripe.Billing.API {
                 
                 URLRouting.Route(.case(Stripe.Billing.API.customer_Portal_Session)) {
                     Stripe.Billing.Customer.Portal.Session.API.Router()
+                }
+
+                URLRouting.Route(.case(Stripe.Billing.API.subscriptionSchedule)) {
+                    Stripe.Billing.Subscription.Schedule.API.Router()
                 }
             }
         }

@@ -59,7 +59,7 @@ extension Stripe.Billing.MeterEventSummary.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let event_summaries = Path {
+    public static let event_summaries = Path {
         "event_summaries"
     }
 }

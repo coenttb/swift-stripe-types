@@ -82,7 +82,7 @@ extension Stripe.Billing.Customer.Portal.Configuration.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let configurations = Path {
+    public static let configurations = Path {
         "configurations"
     }
 }

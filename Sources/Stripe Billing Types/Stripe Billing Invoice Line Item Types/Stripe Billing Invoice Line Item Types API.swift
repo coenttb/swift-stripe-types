@@ -102,19 +102,19 @@ extension Stripe.Billing.Invoice.LineItems.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let lines = Path {
+    public static let lines = Path {
         "lines"
     }
     
-    nonisolated(unsafe) public static let add_lines = Path {
+    public static let add_lines = Path {
         "add_lines"
     }
     
-    nonisolated(unsafe) public static let update_lines = Path {
+    public static let update_lines = Path {
         "update_lines"
     }
     
-    nonisolated(unsafe) public static let remove_lines = Path {
+    public static let remove_lines = Path {
         "remove_lines"
     }
 }

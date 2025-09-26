@@ -27,7 +27,7 @@ extension Stripe.Billing {
         /// Three-letter ISO currency code, in lowercase. Must be a supported currency.
         public var currency: Stripe.Currency?
         /// One of `day`, `week`, `month` or `year`. The frequency with which a subscription should be billed.
-        public var interval: Stripe.Billing.Plan.Interval?
+        public var interval: Stripe.Interval?
         /// Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
         public var metadata: [String: String]?
         /// A brief description of the plan, hidden from customers.
@@ -66,7 +66,7 @@ extension Stripe.Billing {
             active: Bool? = nil,
             amount: Int? = nil,
             currency: Stripe.Currency? = nil,
-            interval: Plan.Interval? = nil,
+            interval: Stripe.Interval? = nil,
             metadata: [String: String]? = nil,
             nickname: String? = nil,
             product: Stripe.Products.Product.ID? = nil,
@@ -126,12 +126,8 @@ extension Stripe.Billing.Plan {
 }
 
 extension Stripe.Billing.Plan {
-    public enum Interval: String, Codable, Sendable {
-        case day
-        case week
-        case month
-        case year
-    }
+    // Using shared Stripe.Interval type
+    public typealias Interval = Stripe.Interval
 }
 
 extension Stripe.Billing.Plan {

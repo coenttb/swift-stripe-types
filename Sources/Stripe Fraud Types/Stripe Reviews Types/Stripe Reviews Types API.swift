@@ -67,11 +67,11 @@ extension Stripe.Fraud.Reviews.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let reviews = Path {
+    public static let reviews = Path {
         "reviews"
     }
     
-    nonisolated(unsafe) public static let approve = Path {
+    public static let approve = Path {
         "approve"
     }
 }

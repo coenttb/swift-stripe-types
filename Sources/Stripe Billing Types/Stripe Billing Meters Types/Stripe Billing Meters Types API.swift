@@ -114,19 +114,19 @@ extension Stripe.Billing.Meters.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let billing = Path {
+    public static let billing = Path {
         "billing"
     }
     
-    nonisolated(unsafe) public static let meters = Path {
+    public static let meters = Path {
         "meters"
     }
     
-    nonisolated(unsafe) public static let deactivate = Path {
+    public static let deactivate = Path {
         "deactivate"
     }
     
-    nonisolated(unsafe) public static let reactivate = Path {
+    public static let reactivate = Path {
         "reactivate"
     }
 }

@@ -39,7 +39,7 @@ extension Stripe.Connect.Account.Session.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let accountSessions = Path {
+    public static let accountSessions = Path {
         "account_sessions"
     }
 }

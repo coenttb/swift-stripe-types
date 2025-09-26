@@ -45,7 +45,7 @@ extension Stripe.Billing.Invoices.Create {
         /// Collection method: charge_automatically or send_invoice
         public let collectionMethod: Stripe.Billing.Invoice.CollectionMethod?
         /// Three-letter ISO currency code
-        public let currency: String?
+        public let currency: Stripe.Currency?
         /// An arbitrary string attached to the object
         public let description: String?
         /// Invoice payment due date (timestamp)
@@ -70,7 +70,7 @@ extension Stripe.Billing.Invoices.Create {
             customer: Stripe.Customers.Customer.ID? = nil,
             autoAdvance: Bool? = nil,
             collectionMethod: Stripe.Billing.Invoice.CollectionMethod? = nil,
-            currency: String? = nil,
+            currency: Stripe.Currency? = nil,
             description: String? = nil,
             dueDate: Date? = nil,
             metadata: [String: String]? = nil,
@@ -96,32 +96,103 @@ extension Stripe.Billing.Invoices.CreatePreview {
         /// Collection method: charge_automatically or send_invoice
         public let collectionMethod: Stripe.Billing.Invoice.CollectionMethod?
         /// Three-letter ISO currency code
-        public let currency: String?
+        public let currency: Stripe.Currency?
         /// An arbitrary string attached to the object
         public let description: String?
         /// The ID of the subscription to preview
         public let subscription: Stripe.Billing.Subscription.ID?
-        
+        /// Details about the subscription for the preview
+        public let subscriptionDetails: SubscriptionDetails?
+
         private enum CodingKeys: String, CodingKey {
             case customer
             case collectionMethod = "collection_method"
             case currency
             case description
             case subscription
+            case subscriptionDetails = "subscription_details"
         }
-        
+
         public init(
             customer: Stripe.Customers.Customer.ID? = nil,
             collectionMethod: Stripe.Billing.Invoice.CollectionMethod? = nil,
-            currency: String? = nil,
+            currency: Stripe.Currency? = nil,
             description: String? = nil,
-            subscription: Stripe.Billing.Subscription.ID? = nil
+            subscription: Stripe.Billing.Subscription.ID? = nil,
+            subscriptionDetails: SubscriptionDetails? = nil
         ) {
             self.customer = customer
             self.collectionMethod = collectionMethod
             self.currency = currency
             self.description = description
             self.subscription = subscription
+            self.subscriptionDetails = subscriptionDetails
+        }
+
+        public struct SubscriptionDetails: Codable, Equatable, Sendable {
+            /// Items to include in the subscription preview
+            public let items: [Item]?
+            /// Behavior for creating prorations
+            public let prorationBehavior: Stripe.Billing.Subscription.ProrationBehavior?
+            /// Timestamp for proration calculation
+            public let prorationDate: Date?
+
+            private enum CodingKeys: String, CodingKey {
+                case items
+                case prorationBehavior = "proration_behavior"
+                case prorationDate = "proration_date"
+            }
+
+            public init(
+                items: [Item]? = nil,
+                prorationBehavior: Stripe.Billing.Subscription.ProrationBehavior? = nil,
+                prorationDate: Date? = nil
+            ) {
+                self.items = items
+                self.prorationBehavior = prorationBehavior
+                self.prorationDate = prorationDate
+            }
+
+            /// Item for subscription preview - similar to Update.Item but for preview
+            public struct Item: Codable, Equatable, Sendable {
+                /// ID of an existing subscription item to update
+                public let id: String?
+                /// Price for this item
+                public let price: Stripe.Products.Price.ID?
+                /// Quantity for this item
+                public let quantity: Int?
+                /// Whether this item should be deleted
+                public let deleted: Bool?
+                /// Metadata for this item
+                public let metadata: [String: String]?
+                /// Tax rates to apply to this item
+                public let taxRates: [String]?
+
+                private enum CodingKeys: String, CodingKey {
+                    case id
+                    case price
+                    case quantity
+                    case deleted
+                    case metadata
+                    case taxRates = "tax_rates"
+                }
+
+                public init(
+                    id: String? = nil,
+                    price: Stripe.Products.Price.ID? = nil,
+                    quantity: Int? = nil,
+                    deleted: Bool? = nil,
+                    metadata: [String: String]? = nil,
+                    taxRates: [String]? = nil
+                ) {
+                    self.id = id
+                    self.price = price
+                    self.quantity = quantity
+                    self.deleted = deleted
+                    self.metadata = metadata
+                    self.taxRates = taxRates
+                }
+            }
         }
     }
 }

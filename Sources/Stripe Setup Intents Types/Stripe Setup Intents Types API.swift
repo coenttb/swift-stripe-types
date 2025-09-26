@@ -131,7 +131,7 @@ extension Stripe.Setup.Intents.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let setupIntents = Path {
+    public static let setupIntents = Path {
         "setup_intents"
     }
 }

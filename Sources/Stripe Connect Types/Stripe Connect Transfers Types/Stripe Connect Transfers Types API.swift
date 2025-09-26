@@ -81,7 +81,7 @@ extension Stripe.Connect.Transfers.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let transfers = Path {
+    public static let transfers = Path {
         "transfers"
     }
 }

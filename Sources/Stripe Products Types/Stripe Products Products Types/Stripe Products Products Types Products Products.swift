@@ -55,7 +55,7 @@ extension Stripe.Products.Products.DefaultPrice {
         
         public struct Recurring: Codable, Equatable, Sendable {
             /// Specifies billing frequency
-            public let interval: Interval
+            public let interval: Stripe.Interval
             /// The number of intervals between subscription billings
             public let intervalCount: Int?
             
@@ -64,17 +64,13 @@ extension Stripe.Products.Products.DefaultPrice {
                 case intervalCount = "interval_count"
             }
             
-            public init(interval: Interval, intervalCount: Int? = nil) {
+            public init(interval: Stripe.Interval, intervalCount: Int? = nil) {
                 self.interval = interval
                 self.intervalCount = intervalCount
             }
             
-            public enum Interval: String, Codable, Equatable, Sendable {
-                case day
-                case week
-                case month
-                case year
-            }
+            // Using shared Stripe.Interval type
+            public typealias Interval = Stripe.Interval
         }
         
         public enum TaxBehavior: String, Codable, Equatable, Sendable {

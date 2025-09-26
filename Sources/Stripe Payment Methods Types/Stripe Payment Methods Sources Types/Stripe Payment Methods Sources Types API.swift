@@ -75,7 +75,7 @@ extension Stripe.PaymentMethods.Sources.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let sources = Path {
+    public static let sources = Path {
         "sources"
     }
 }

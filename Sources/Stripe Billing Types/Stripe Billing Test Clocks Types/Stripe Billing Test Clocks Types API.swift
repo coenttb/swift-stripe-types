@@ -93,15 +93,15 @@ extension Stripe.Billing.TestClocks.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let test_helpers = Path {
+    public static let test_helpers = Path {
         "test_helpers"
     }
     
-    nonisolated(unsafe) public static let test_clocks = Path {
+    public static let test_clocks = Path {
         "test_clocks"
     }
     
-    nonisolated(unsafe) public static let advance = Path {
+    public static let advance = Path {
         "advance"
     }
 }

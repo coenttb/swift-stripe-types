@@ -36,7 +36,7 @@ extension Stripe.Billing {
 //    public let quote: Billing_Quote.Client
         public let subscriptions: Stripe.Billing.Subscriptions.Client
 //    public let subscription_Items: Billing_Subscription_Items.Client
-//    public let subscription_Schedule: Billing_Subscription_Schedule.Client
+        public let subscriptionSchedule: Stripe.Billing.Subscription.Schedule.Client
 //    public let tax_IDs: Billing_Tax_IDs.Client
 //    public let test_Clocks: Billing_Test_Clocks.Client
 //    public let usage_Records: Billing_Usage_Records.Client
@@ -44,10 +44,12 @@ extension Stripe.Billing {
 
         public init(
             customer_Portal_Session: Stripe.Billing.Customer.Portal.Session.Client,
-            subscriptions: Stripe.Billing.Subscriptions.Client
+            subscriptions: Stripe.Billing.Subscriptions.Client,
+            subscriptionSchedule: Stripe.Billing.Subscription.Schedule.Client
         ) {
             self.customer_Portal_Session = customer_Portal_Session
             self.subscriptions = subscriptions
+            self.subscriptionSchedule = subscriptionSchedule
         }
     }
 }

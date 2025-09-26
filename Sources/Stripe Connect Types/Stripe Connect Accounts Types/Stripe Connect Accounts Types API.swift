@@ -111,11 +111,11 @@ extension Stripe.Connect.Accounts.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) static let accounts = Path {
+    static let accounts = Path {
         "accounts"
     }
     
-    nonisolated(unsafe) static let reject = Path {
+    static let reject = Path {
         "reject"
     }
 }

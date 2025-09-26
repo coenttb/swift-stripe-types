@@ -9,7 +9,7 @@
 import Stripe_Types_Shared
 
 extension Stripe {
-    public enum Currency: String, Codable, CaseIterable, Sendable {
+    public enum Currency: String, Codable, CaseIterable, Sendable, Hashable {
         case usd
         case aed
         case afn

@@ -75,7 +75,7 @@ extension Stripe.Terminal.Locations.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let locations = Path {
+    public static let locations = Path {
         "locations"
     }
 }

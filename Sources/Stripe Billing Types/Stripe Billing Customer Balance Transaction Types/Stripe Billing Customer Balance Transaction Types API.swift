@@ -79,6 +79,6 @@ extension Stripe.Billing.Customer.Balance.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) package static let customers = Path { "customers" }
-    nonisolated(unsafe) package static let balance_transactions = Path { "balance_transactions" }
+    package static let customers = Path { "customers" }
+    package static let balance_transactions = Path { "balance_transactions" }
 }

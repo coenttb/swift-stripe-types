@@ -31,7 +31,7 @@ extension Stripe.Connect.AccountLinks.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let account_links = Path {
+    public static let account_links = Path {
         "account_links"
     }
 }

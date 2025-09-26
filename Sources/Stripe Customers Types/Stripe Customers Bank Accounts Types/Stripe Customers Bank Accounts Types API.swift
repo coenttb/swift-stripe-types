@@ -104,15 +104,15 @@ extension Stripe.Customers.BankAccounts.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let bankAccounts = Path {
+    public static let bankAccounts = Path {
         "bank_accounts"
     }
     
-    nonisolated(unsafe) public static let sources = Path {
+    public static let sources = Path {
         "sources"
     }
     
-    nonisolated(unsafe) public static let verify = Path {
+    public static let verify = Path {
         "verify"
     }
 }

@@ -169,27 +169,27 @@ extension Stripe.Billing.Invoices.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let invoices = Path {
+    public static let invoices = Path {
         "invoices"
     }
     
-    nonisolated(unsafe) public static let createPreview = Path {
+    public static let createPreview = Path {
         "create_preview"
     }
     
-    nonisolated(unsafe) public static let finalize = Path {
+    public static let finalize = Path {
         "finalize"
     }
     
-    nonisolated(unsafe) public static let pay = Path {
+    public static let pay = Path {
         "pay"
     }
     
-    nonisolated(unsafe) public static let send = Path {
+    public static let send = Path {
         "send"
     }
     
-    nonisolated(unsafe) public static let void = Path {
+    public static let void = Path {
         "void"
     }
 }

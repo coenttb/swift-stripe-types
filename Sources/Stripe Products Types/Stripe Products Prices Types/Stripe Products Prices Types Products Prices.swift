@@ -185,7 +185,7 @@ extension Stripe.Products.Prices.List {
         /// Only return prices that are active or inactive
         public let active: Bool?
         /// Only return prices for the given currency
-        public let currency: String?
+        public let currency: Stripe.Currency?
         /// Only return prices that were created during the given date interval
         public let created: Stripe.DateFilter?
         /// A cursor for use in pagination
@@ -218,7 +218,7 @@ extension Stripe.Products.Prices.List {
 
         public init(
             active: Bool? = nil,
-            currency: String? = nil,
+            currency: Stripe.Currency? = nil,
             created: Stripe.DateFilter? = nil,
             endingBefore: String? = nil,
             limit: Int? = nil,

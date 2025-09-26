@@ -79,5 +79,5 @@ extension Stripe.Billing.TaxIDs.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) package static let tax_ids = Path { "tax_ids" }
+    package static let tax_ids = Path { "tax_ids" }
 }

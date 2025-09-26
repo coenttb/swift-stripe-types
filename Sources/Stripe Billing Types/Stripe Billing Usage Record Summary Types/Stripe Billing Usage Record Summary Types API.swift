@@ -46,5 +46,5 @@ extension Stripe.Billing.UsageRecordSummary.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) package static let usage_record_summaries = Path { "usage_record_summaries" }
+    package static let usage_record_summaries = Path { "usage_record_summaries" }
 }

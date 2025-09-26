@@ -133,12 +133,12 @@ extension Stripe.Mandates.Mandate.PaymentMethodDetails.Blik {
         /// Currency of each recurring payment.
         public var currency: Stripe.Currency?
         /// Frequency interval of each recurring payment.
-        public var interval: Stripe.Mandates.Mandate.PaymentMethodDetails.Blik.OffSession.Interval?
+        public var interval: Stripe.Interval?
         
         public init(
             amount: Int? = nil,
             currency: Stripe.Currency? = nil,
-            interval: Stripe.Mandates.Mandate.PaymentMethodDetails.Blik.OffSession.Interval? = nil
+            interval: Stripe.Interval? = nil
         ) {
             self.amount = amount
             self.currency = currency
@@ -155,16 +155,8 @@ extension Stripe.Mandates.Mandate.PaymentMethodDetails.Blik {
 }
 
 extension Stripe.Mandates.Mandate.PaymentMethodDetails.Blik.OffSession {
-    public enum Interval: String, Codable, Sendable {
-        /// Payments recur every day.
-        case day
-        /// Payments recur every week.
-        case week
-        /// Payments recur every month.
-        case month
-        /// Payments recur every year.
-        case year
-    }
+    // Using shared Stripe.Interval type
+    public typealias Interval = Stripe.Interval
 }
 
 // MARK: - Card

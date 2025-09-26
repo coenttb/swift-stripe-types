@@ -182,15 +182,15 @@ extension Stripe.Billing.CreditNotes.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let credit_notes = Path {
+    public static let credit_notes = Path {
         "credit_notes"
     }
     
-    nonisolated(unsafe) public static let preview = Path {
+    public static let preview = Path {
         "preview"
     }
     
-    nonisolated(unsafe) public static let voidPath = Path {
+    public static let voidPath = Path {
         "void"
     }
 }

@@ -276,12 +276,8 @@ extension Stripe.Billing.Subscription {
         case paused
     }
     
-    public enum Interval: String, Codable, Sendable {
-        case day
-        case week
-        case month
-        case year
-    }
+    // Using shared Stripe.Interval type
+    public typealias Interval = Stripe.Interval
     
     public enum PaymentBehavior: String, Codable, Sendable {
         case allowIncomplete = "allow_incomplete"
@@ -453,7 +449,7 @@ extension Stripe.Billing.Subscription.Payment {
 extension Stripe.Billing.Subscription {
     public struct PendingInvoiceItemInterval: Codable, Hashable, Sendable {
         /// Billing interval
-        public var interval: Interval?
+        public var interval: Stripe.Interval?
         /// Number of intervals between invoices
         public var intervalCount: Int?
         
@@ -463,7 +459,7 @@ extension Stripe.Billing.Subscription {
         }
         
         public init(
-            interval: Interval? = nil,
+            interval: Stripe.Interval? = nil,
             intervalCount: Int? = nil
         ) {
             self.interval = interval

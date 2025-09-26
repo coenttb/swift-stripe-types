@@ -11,7 +11,7 @@ extension Stripe.Capital {
         public struct Details: Codable, Equatable, Sendable {
             public let advanceAmount: Int
             public let advancePaidOutAt: Date?
-            public let currency: String
+            public let currency: Stripe.Currency
             public let currentRepaymentInterval: String?
             public let feeAmount: Int
             public let paidAmount: Int

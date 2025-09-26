@@ -928,14 +928,14 @@ extension Stripe.Connect.Account.Settings {
 extension Stripe.Connect.Account.Settings.CardIssuing {
     public struct TOSAcceptance: Codable, Hashable, Sendable {
         /// The Unix timestamp marking when the account representative accepted the service agreement.
-        public var date: Int?
+        public var date: Date?
         /// The IP address from which the account representative accepted the service agreement.
         public var ip: String?
         /// The user agent of the browser from which the account representative accepted the service agreement.
         public var userAgent: String?
 
         public init(
-            date: Int? = nil,
+            date: Date? = nil,
             ip: String? = nil,
             userAgent: String? = nil
         ) {

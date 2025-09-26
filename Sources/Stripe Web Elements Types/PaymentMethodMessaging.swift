@@ -13,7 +13,7 @@ extension Stripe.WebElements {
         
         public struct Options: Codable, Hashable, Sendable {
             public let amount: Int?
-            public let currency: String?
+            public let currency: Stripe.Currency?
             public let paymentMethodTypes: [String]?
             public let countryCode: String?
             public let displayType: DisplayType?
@@ -28,7 +28,7 @@ extension Stripe.WebElements {
             
             public init(
                 amount: Int? = nil,
-                currency: String? = nil,
+                currency: Stripe.Currency? = nil,
                 paymentMethodTypes: [String]? = nil,
                 countryCode: String? = nil,
                 displayType: DisplayType? = nil

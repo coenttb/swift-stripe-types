@@ -150,7 +150,7 @@ extension Stripe.Billing {
         /// The timestamps at which the invoice status was updated.
         public var statusTransitions: Stripe.Billing.Invoice.StatusTransitions?
         /// Only set for upcoming invoices that preview prorations. The time used to calculate prorations.
-        public var subscriptionProrationDate: Int?
+        public var subscriptionProrationDate: Date?
         /// Total of all subscriptions, invoice items, and prorations on the invoice before any discount is applied.
         public var subtotal: Int?
         /// The integer amount in cents representing the subtotal of the invoice before any invoice level discount or tax is applied. Item discounts are already incorporated.
@@ -239,7 +239,7 @@ extension Stripe.Billing {
             startingBalance: Int? = nil,
             statementDescriptor: Stripe.StatementDescriptor? = nil,
             statusTransitions: Stripe.Billing.Invoice.StatusTransitions? = nil,
-            subscriptionProrationDate: Int? = nil,
+            subscriptionProrationDate: Date? = nil,
             subtotal: Int? = nil,
             subtotalExcludingTax: Int? = nil,
             tax: Int? = nil,

@@ -91,7 +91,7 @@ extension Stripe.Tokens.Create.Request {
     
     public struct BankAccountData: Codable, Equatable, Sendable {
         public let country: String
-        public let currency: String
+        public let currency: Stripe.Currency
         public let accountHolderName: String?
         public let accountHolderType: String?
         public let routingNumber: String?
@@ -108,7 +108,7 @@ extension Stripe.Tokens.Create.Request {
         
         public init(
             country: String,
-            currency: String,
+            currency: Stripe.Currency,
             accountNumber: String,
             accountHolderName: String? = nil,
             accountHolderType: String? = nil,

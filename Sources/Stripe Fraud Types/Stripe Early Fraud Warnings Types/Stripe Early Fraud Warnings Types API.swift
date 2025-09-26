@@ -61,11 +61,11 @@ extension Stripe.Fraud.EarlyFraudWarnings.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let radar = Path {
+    public static let radar = Path {
         "radar"
     }
     
-    nonisolated(unsafe) public static let earlyFraudWarnings = Path {
+    public static let earlyFraudWarnings = Path {
         "early_fraud_warnings"
     }
 }

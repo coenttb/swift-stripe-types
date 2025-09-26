@@ -93,7 +93,7 @@ extension Stripe.Disputes.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let disputes = Path {
+    public static let disputes = Path {
         "disputes"
     }
 }

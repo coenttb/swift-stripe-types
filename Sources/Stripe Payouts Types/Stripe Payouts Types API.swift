@@ -111,15 +111,15 @@ extension Stripe.Payouts.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let payouts = Path {
+    public static let payouts = Path {
         "payouts"
     }
     
-    nonisolated(unsafe) public static let cancel = Path {
+    public static let cancel = Path {
         "cancel"
     }
     
-    nonisolated(unsafe) public static let reverse = Path {
+    public static let reverse = Path {
         "reverse"
     }
 }

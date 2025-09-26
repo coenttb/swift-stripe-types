@@ -50,15 +50,15 @@ extension Stripe.Products.Discounts.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let discount = Path {
+    public static let discount = Path {
         "discount"
     }
     
-    nonisolated(unsafe) public static let customers = Path {
+    public static let customers = Path {
         "customers"
     }
     
-    nonisolated(unsafe) public static let subscriptions = Path {
+    public static let subscriptions = Path {
         "subscriptions"
     }
 }

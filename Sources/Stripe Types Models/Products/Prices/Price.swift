@@ -199,7 +199,7 @@ extension Stripe.Products.Price.Billing {
 }
 
 extension Stripe.Products.Price {
-    public enum Currency {}
+    public typealias Currency = Stripe.Currency
 }
 
 extension Stripe.Products.Price.Currency {

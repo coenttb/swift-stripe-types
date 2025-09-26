@@ -124,5 +124,5 @@ extension Stripe.Products.Products.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) package static let products = Path { "products" }
+    package static let products = Path { "products" }
 }

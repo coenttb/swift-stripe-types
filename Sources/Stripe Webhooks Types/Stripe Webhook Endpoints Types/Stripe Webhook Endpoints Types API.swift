@@ -85,7 +85,7 @@ extension Stripe.WebhookEndpoint.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let webhookEndpoints = Path {
+    public static let webhookEndpoints = Path {
         "webhook_endpoints"
     }
 }

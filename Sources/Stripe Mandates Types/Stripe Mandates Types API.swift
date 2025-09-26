@@ -40,7 +40,7 @@ extension Stripe.Mandates.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let mandates = Path {
+    public static let mandates = Path {
         "mandates"
     }
 }

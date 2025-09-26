@@ -88,7 +88,7 @@ extension Stripe.Products.Shipping {
 }
 
 extension Stripe.Products.Shipping.Rate.Fixed.Amount {
-    public enum Currency {}
+    public typealias Currency = Stripe.Currency
 }
 
 extension Stripe.Products.Shipping.Rate.Fixed {

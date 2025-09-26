@@ -129,7 +129,7 @@ extension Stripe.Charges.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let charges = Path {
+    public static let charges = Path {
         "charges"
     }
 }

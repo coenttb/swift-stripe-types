@@ -20,7 +20,7 @@ extension Stripe.Capital {
         public struct OfferedTerms: Codable, Equatable, Sendable {
             public let advanceAmount: Int
             public let campaignType: String
-            public let currency: String
+            public let currency: Stripe.Currency
             public let feeAmount: Int
             public let previousFinancingFeeDiscountRate: Double?
             public let withholdRate: Double

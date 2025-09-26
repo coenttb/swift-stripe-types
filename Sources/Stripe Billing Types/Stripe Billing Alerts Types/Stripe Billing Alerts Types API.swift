@@ -110,15 +110,15 @@ extension Stripe.Billing.Alerts.API {
 
 // MARK: - Path Extensions
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let alerts = Path {
+    public static let alerts = Path {
         "alerts"
     }
     
-    nonisolated(unsafe) public static let activate = Path {
+    public static let activate = Path {
         "activate"
     }
     
-    nonisolated(unsafe) public static let archive = Path {
+    public static let archive = Path {
         "archive"
     }
 }

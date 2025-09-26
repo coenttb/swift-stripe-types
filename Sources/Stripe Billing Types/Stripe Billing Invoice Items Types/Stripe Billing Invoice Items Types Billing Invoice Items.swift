@@ -28,7 +28,7 @@ extension Stripe.Billing.InvoiceItems.Create {
         /// The amount of the item, in cents
         public let amount: Int?
         /// Three-letter ISO currency code
-        public let currency: String?
+        public let currency: Stripe.Currency?
         /// An arbitrary string attached to the object
         public let description: String?
         /// Controls discount applicability
@@ -81,7 +81,7 @@ extension Stripe.Billing.InvoiceItems.Create {
         public init(
             customer: Stripe.Customers.Customer.ID,
             amount: Int? = nil,
-            currency: String? = nil,
+            currency: Stripe.Currency? = nil,
             description: String? = nil,
             discountable: Bool? = nil,
             discounts: [Discount]? = nil,
@@ -156,7 +156,7 @@ extension Stripe.Billing.InvoiceItems.Create {
     
     public struct PriceData: Codable, Equatable, Sendable {
         /// Three-letter ISO currency code
-        public let currency: String
+        public let currency: Stripe.Currency
         /// The ID of the product that this price will belong to
         public let product: Stripe.Products.Product.ID
         /// Specifies whether the price is considered inclusive of taxes
@@ -175,7 +175,7 @@ extension Stripe.Billing.InvoiceItems.Create {
         }
         
         public init(
-            currency: String,
+            currency: Stripe.Currency,
             product: Stripe.Products.Product.ID,
             taxBehavior: String? = nil,
             unitAmount: Int? = nil,

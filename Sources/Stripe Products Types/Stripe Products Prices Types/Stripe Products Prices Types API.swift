@@ -55,7 +55,7 @@ extension Stripe.Products.Prices.API {
                                 Field("active") { Bool.parser() }
                             }
                             Optionally {
-                                Field("currency") { Parse(.string) }
+                                Field("currency") { Parse(.string.representing(Stripe.Currency.self)) }
                             }
                             Optionally {
                                 Field("created") { Parse(.string.representing(Stripe.DateFilter.self)) }
@@ -113,7 +113,7 @@ extension Stripe.Products.Prices.API {
 
 // Add path extensions for Prices
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let prices = Path {
+    public static let prices = Path {
         "prices"
     }
 }

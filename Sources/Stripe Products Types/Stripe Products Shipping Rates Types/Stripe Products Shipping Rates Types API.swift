@@ -81,7 +81,7 @@ extension Stripe.Products.ShippingRates.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let shippingRates = Path {
+    public static let shippingRates = Path {
         "shipping_rates"
     }
 }

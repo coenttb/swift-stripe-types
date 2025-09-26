@@ -92,7 +92,7 @@ extension Stripe.Events.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let events = Path {
+    public static let events = Path {
         "events"
     }
 }

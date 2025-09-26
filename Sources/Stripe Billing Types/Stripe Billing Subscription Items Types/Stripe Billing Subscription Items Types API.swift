@@ -93,7 +93,7 @@ extension Stripe.Billing.SubscriptionItems.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let subscription_items = Path {
+    public static let subscription_items = Path {
         "subscription_items"
     }
 }

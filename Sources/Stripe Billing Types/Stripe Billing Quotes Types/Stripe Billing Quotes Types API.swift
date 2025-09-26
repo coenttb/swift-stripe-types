@@ -185,31 +185,31 @@ extension Stripe.Billing.Quotes.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let quotes = Path {
+    public static let quotes = Path {
         "quotes"
     }
     
-    nonisolated(unsafe) public static let accept = Path {
+    public static let accept = Path {
         "accept"
     }
     
-    nonisolated(unsafe) public static let quotes_cancel = Path {
+    public static let quotes_cancel = Path {
         "cancel"
     }
     
-    nonisolated(unsafe) public static let quotes_finalize = Path {
+    public static let quotes_finalize = Path {
         "finalize"
     }
     
-    nonisolated(unsafe) public static let pdf = Path {
+    public static let pdf = Path {
         "pdf"
     }
     
-    nonisolated(unsafe) public static let line_items = Path {
+    public static let line_items = Path {
         "line_items"
     }
     
-    nonisolated(unsafe) public static let computed_upfront_line_items = Path {
+    public static let computed_upfront_line_items = Path {
         "computed_upfront_line_items"
     }
 }

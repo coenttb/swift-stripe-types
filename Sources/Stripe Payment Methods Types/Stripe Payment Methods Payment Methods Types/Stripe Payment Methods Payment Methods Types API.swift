@@ -138,16 +138,16 @@ extension Stripe.PaymentMethods.PaymentMethods.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let payment_methods = Path {
+    public static let payment_methods = Path {
         "payment_methods"
     }
-    nonisolated(unsafe) public static let customers = Path {
+    public static let customers = Path {
         "customers"
     }
-    nonisolated(unsafe) public static let attach = Path {
+    public static let attach = Path {
         "attach"
     }
-    nonisolated(unsafe) public static let detach = Path {
+    public static let detach = Path {
         "detach"
     }
 }

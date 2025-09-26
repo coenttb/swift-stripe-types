@@ -14,15 +14,15 @@ import URLRouting
 
 @Suite("Billing Subscription Schedule Router Tests")
 struct BillingSubscriptionScheduleRouterTests {
-    let router = Stripe.Billing.SubscriptionSchedule.API.Router()
+    let router = Stripe.Billing.Subscription.Schedule.API.Router()
     
     @Test("Create subscription schedule URL generation")
     func testCreateSubscriptionSchedule() throws {
-        let request = Stripe.Billing.SubscriptionSchedule.Create.Request(
+        let request = Stripe.Billing.Subscription.Schedule.Create.Request(
             customer: "cus_123",
             endBehavior: .release
         )
-        let api = Stripe.Billing.SubscriptionSchedule.API.create(request: request)
+        let api = Stripe.Billing.Subscription.Schedule.API.create(request: request)
         let url = router.url(for: api)
         
         #expect(url.path == "/v1/subscription_schedules")
@@ -30,7 +30,7 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Retrieve subscription schedule URL generation")
     func testRetrieveSubscriptionSchedule() throws {
-        let api = Stripe.Billing.SubscriptionSchedule.API.retrieve(id: "sub_sched_123")
+        let api = Stripe.Billing.Subscription.Schedule.API.retrieve(id: "sub_sched_123")
         let url = router.url(for: api)
         
         #expect(url.path == "/v1/subscription_schedules/sub_sched_123")
@@ -38,10 +38,10 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Update subscription schedule URL generation")
     func testUpdateSubscriptionSchedule() throws {
-        let request = Stripe.Billing.SubscriptionSchedule.Update.Request(
+        let request = Stripe.Billing.Subscription.Schedule.Update.Request(
             endBehavior: .cancel
         )
-        let api = Stripe.Billing.SubscriptionSchedule.API.update(id: "sub_sched_123", request: request)
+        let api = Stripe.Billing.Subscription.Schedule.API.update(id: "sub_sched_123", request: request)
         let url = router.url(for: api)
         
         #expect(url.path == "/v1/subscription_schedules/sub_sched_123")
@@ -49,12 +49,12 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("List subscription schedules URL generation")
     func testListSubscriptionSchedules() throws {
-        let request = Stripe.Billing.SubscriptionSchedule.List.Request(
+        let request = Stripe.Billing.Subscription.Schedule.List.Request(
             customer: "cus_123",
             limit: 10,
             scheduled: true
         )
-        let api = Stripe.Billing.SubscriptionSchedule.API.list(request: request)
+        let api = Stripe.Billing.Subscription.Schedule.API.list(request: request)
         let url = router.url(for: api)
         
         #expect(url.path == "/v1/subscription_schedules")
@@ -65,11 +65,11 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Cancel subscription schedule URL generation")
     func testCancelSubscriptionSchedule() throws {
-        let request = Stripe.Billing.SubscriptionSchedule.Cancel.Request(
+        let request = Stripe.Billing.Subscription.Schedule.Cancel.Request(
             invoiceNow: true,
             prorate: false
         )
-        let api = Stripe.Billing.SubscriptionSchedule.API.cancel(id: "sub_sched_123", request: request)
+        let api = Stripe.Billing.Subscription.Schedule.API.cancel(id: "sub_sched_123", request: request)
         let url = router.url(for: api)
         
         #expect(url.path == "/v1/subscription_schedules/sub_sched_123/cancel")
@@ -77,10 +77,10 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Release subscription schedule URL generation")
     func testReleaseSubscriptionSchedule() throws {
-        let request = Stripe.Billing.SubscriptionSchedule.Release.Request(
+        let request = Stripe.Billing.Subscription.Schedule.Release.Request(
             preserveCancelDate: true
         )
-        let api = Stripe.Billing.SubscriptionSchedule.API.release(id: "sub_sched_123", request: request)
+        let api = Stripe.Billing.Subscription.Schedule.API.release(id: "sub_sched_123", request: request)
         let url = router.url(for: api)
         
         #expect(url.path == "/v1/subscription_schedules/sub_sched_123/release")
@@ -88,7 +88,7 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Round-trip parsing for retrieve")
     func testRoundTripRetrieve() throws {
-        let original = Stripe.Billing.SubscriptionSchedule.API.retrieve(id: "sub_sched_123")
+        let original = Stripe.Billing.Subscription.Schedule.API.retrieve(id: "sub_sched_123")
         let request = try router.request(for: original)
         let parsed = try router.match(request: request)
         #expect(parsed == original)
@@ -96,8 +96,8 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Round-trip parsing for cancel")
     func testRoundTripCancel() throws {
-        let cancelRequest = Stripe.Billing.SubscriptionSchedule.Cancel.Request()
-        let original = Stripe.Billing.SubscriptionSchedule.API.cancel(id: "sub_sched_123", request: cancelRequest)
+        let cancelRequest = Stripe.Billing.Subscription.Schedule.Cancel.Request()
+        let original = Stripe.Billing.Subscription.Schedule.API.cancel(id: "sub_sched_123", request: cancelRequest)
         let request = try router.request(for: original)
         #expect(request.httpMethod == "POST")
         let parsed = try router.match(request: request)
@@ -106,8 +106,8 @@ struct BillingSubscriptionScheduleRouterTests {
     
     @Test("Round-trip parsing for release")
     func testRoundTripRelease() throws {
-        let releaseRequest = Stripe.Billing.SubscriptionSchedule.Release.Request()
-        let original = Stripe.Billing.SubscriptionSchedule.API.release(id: "sub_sched_123", request: releaseRequest)
+        let releaseRequest = Stripe.Billing.Subscription.Schedule.Release.Request()
+        let original = Stripe.Billing.Subscription.Schedule.API.release(id: "sub_sched_123", request: releaseRequest)
         let request = try router.request(for: original)
         #expect(request.httpMethod == "POST")
         let parsed = try router.match(request: request)

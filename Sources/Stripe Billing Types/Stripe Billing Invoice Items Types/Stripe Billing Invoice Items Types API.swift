@@ -104,7 +104,7 @@ extension Stripe.Billing.InvoiceItems.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let invoiceitems = Path {
+    public static let invoiceitems = Path {
         "invoiceitems"
     }
 }

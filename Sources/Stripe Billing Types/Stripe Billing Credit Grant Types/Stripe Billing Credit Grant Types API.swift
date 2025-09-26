@@ -102,10 +102,10 @@ extension Stripe.Billing.Credit.Grant.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let credit_grants = Path {
+    public static let credit_grants = Path {
         "credit_grants"
     }
-    nonisolated(unsafe) public static let expire = Path {
+    public static let expire = Path {
         "expire"
     }
 }

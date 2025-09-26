@@ -88,11 +88,11 @@ extension Stripe.PaymentMethodDomains.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let paymentMethodDomains = Path {
+    public static let paymentMethodDomains = Path {
         "payment_method_domains"
     }
     
-    nonisolated(unsafe) public static let validate = Path {
+    public static let validate = Path {
         "validate"
     }
 }

@@ -33,11 +33,11 @@ extension Stripe.Billing.Customer.Portal.Session.API {
 
 // MARK: - Path Extensions
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let billing_portal = Path {
+    public static let billing_portal = Path {
         "billing_portal"
     }
     
-    nonisolated(unsafe) public static let sessions = Path {
+    public static let sessions = Path {
         "sessions"
     }
 }

@@ -63,11 +63,11 @@ extension Stripe.Forwarding.Request.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let forwarding = Path {
+    public static let forwarding = Path {
         "forwarding"
     }
     
-    nonisolated(unsafe) public static let requests = Path {
+    public static let requests = Path {
         "requests"
     }
 }

@@ -42,7 +42,7 @@ extension Stripe.PaymentMethods.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let paymentMethods = Path {
+    public static let paymentMethods = Path {
         "payment_methods"
     }
 }

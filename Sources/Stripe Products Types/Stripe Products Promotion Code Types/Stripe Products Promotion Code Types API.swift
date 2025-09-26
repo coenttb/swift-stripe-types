@@ -87,7 +87,7 @@ extension Stripe.Products.PromotionCodes.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let promotionCodes = Path {
+    public static let promotionCodes = Path {
         "promotion_codes"
     }
 }

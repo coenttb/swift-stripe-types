@@ -33,7 +33,7 @@ extension Stripe.Customers.Customer.Sessions.API {
 
 // Add path extensions for Customer Sessions
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let customerSessions = Path {
+    public static let customerSessions = Path {
         "customer_sessions"
     }
 }

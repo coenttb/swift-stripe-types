@@ -668,7 +668,7 @@ extension Stripe.Checkout.Session.Consent {
 }
 
 extension Stripe.Checkout.Session {
-    public enum Currency {}
+    public typealias Currency = Stripe.Currency
 }
 
 extension Stripe.Checkout.Session.Currency {

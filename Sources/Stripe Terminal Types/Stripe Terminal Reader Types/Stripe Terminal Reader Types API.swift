@@ -183,51 +183,51 @@ extension Stripe.Terminal.Readers.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let terminal = Path {
+    public static let terminal = Path {
         "terminal"
     }
     
-    nonisolated(unsafe) public static let readers = Path {
+    public static let readers = Path {
         "readers"
     }
     
-    nonisolated(unsafe) public static let cancelAction = Path {
+    public static let cancelAction = Path {
         "cancel_action"
     }
     
-    nonisolated(unsafe) public static let processPaymentIntent = Path {
+    public static let processPaymentIntent = Path {
         "process_payment_intent"
     }
     
-    nonisolated(unsafe) public static let processSetupIntent = Path {
+    public static let processSetupIntent = Path {
         "process_setup_intent"
     }
     
-    nonisolated(unsafe) public static let collectInputs = Path {
+    public static let collectInputs = Path {
         "collect_inputs"
     }
     
-    nonisolated(unsafe) public static let confirmPaymentIntent = Path {
+    public static let confirmPaymentIntent = Path {
         "confirm_payment_intent"
     }
     
-    nonisolated(unsafe) public static let collectPaymentMethod = Path {
+    public static let collectPaymentMethod = Path {
         "collect_payment_method"
     }
     
-    nonisolated(unsafe) public static let refundPayment = Path {
+    public static let refundPayment = Path {
         "refund_payment"
     }
     
-    nonisolated(unsafe) public static let setReaderDisplay = Path {
+    public static let setReaderDisplay = Path {
         "set_reader_display"
     }
     
-    nonisolated(unsafe) public static let testHelpers = Path {
+    public static let testHelpers = Path {
         "test_helpers"
     }
     
-    nonisolated(unsafe) public static let presentPaymentMethod = Path {
+    public static let presentPaymentMethod = Path {
         "present_payment_method"
     }
 }

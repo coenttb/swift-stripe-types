@@ -50,7 +50,7 @@ extension Stripe.Tokens.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let tokens = Path {
+    public static let tokens = Path {
         "tokens"
     }
 }

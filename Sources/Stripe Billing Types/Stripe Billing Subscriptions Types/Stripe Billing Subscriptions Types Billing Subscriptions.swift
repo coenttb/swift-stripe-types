@@ -115,13 +115,13 @@ extension Stripe.Billing.Subscriptions.Update {
     }
     
     public struct Item: Codable, Equatable, Sendable {
-        public let id: String?
+        public let id: Stripe.Billing.Subscription.Item.ID?
         public let price: Stripe.Products.Price.ID?
         public let quantity: Int?
         public let deleted: Bool?
         
         public init(
-            id: String? = nil,
+            id: Stripe.Billing.Subscription.Item.ID? = nil,
             price: Stripe.Products.Price.ID? = nil,
             quantity: Int? = nil,
             deleted: Bool? = nil

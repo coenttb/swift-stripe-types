@@ -55,7 +55,7 @@ extension Stripe.Setup.Attempts.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let setupAttempts = Path {
+    public static let setupAttempts = Path {
         "setup_attempts"
     }
 }

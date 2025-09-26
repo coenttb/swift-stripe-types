@@ -31,7 +31,7 @@ extension Stripe.ConfirmationTokenAPI {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let confirmationTokens = Path {
+    public static let confirmationTokens = Path {
         "confirmation_tokens"
     }
 }

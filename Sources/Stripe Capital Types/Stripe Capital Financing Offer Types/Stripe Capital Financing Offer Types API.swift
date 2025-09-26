@@ -73,13 +73,13 @@ extension Stripe.Capital.FinancingOffer.API {
 }
 
 extension Path<PathBuilder.Component<String>> {
-    nonisolated(unsafe) public static let capital = Path {
+    public static let capital = Path {
         "capital"
     }
-    nonisolated(unsafe) public static let financingOffers = Path {
+    public static let financingOffers = Path {
         "financing_offers"
     }
-    nonisolated(unsafe) public static let markDelivered = Path {
+    public static let markDelivered = Path {
         "mark_delivered"
     }
 }
