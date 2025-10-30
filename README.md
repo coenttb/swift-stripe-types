@@ -2,7 +2,7 @@
 
 [![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](https://github.com/coenttb/swift-stripe-types/releases)
+[![Version](https://img.shields.io/badge/version-0.1.1-green.svg)](https://github.com/coenttb/swift-stripe-types/releases)
 
 Comprehensive type definitions for Stripe's API in Swift, providing complete type safety and compile-time guarantees.
 
