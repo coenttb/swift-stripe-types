@@ -81,7 +81,7 @@ import Testing
     let messagingWithOptions = Stripe.WebElements.PaymentMethodMessaging(
         options: .init(
             amount: 1000,
-            currency: "USD",
+            currency: .usd,
             displayType: .promotional
         )
     )
