@@ -1,8 +1,9 @@
 # swift-stripe-types
 
 [![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS%2014%2B%20|%20iOS%2017%2B-lightgray.svg)]()
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/version-0.1.1-green.svg)](https://github.com/coenttb/swift-stripe-types/releases)
+[![CI](https://github.com/coenttb/swift-stripe-types/workflows/CI/badge.svg)](https://github.com/coenttb/swift-stripe-types/actions/workflows/ci.yml)
 
 Comprehensive type definitions for Stripe's API in Swift, providing complete type safety and compile-time guarantees.
 
