@@ -12,7 +12,7 @@ Comprehensive type definitions for Stripe's API in Swift, providing complete typ
 
 - 🎯 **Type Safety**: Tagged IDs prevent mixing different resource identifiers
 - 📦 **48 Modules Implemented**: Complete coverage of essential Stripe features
-- 🔌 **Protocol-Based**: Clean separation between types and implementations
+- 🔌 **Client Types**: Clean separation between types and implementations
 - ⚡ **Swift 6.0**: Full concurrency support with Sendable conformance
 - 🧪 **Testable**: Dependency injection via swift-dependencies
 - 📄 **Apache 2.0**: Maximum compatibility for all projects
@@ -50,9 +50,9 @@ let createCustomer = Stripe.Customers.Create.Request(
 let client: Stripe.Customers.Client = Stripe.Customers.Client(...)
 ```
 
-### Client
+### Client Types
 
-Every Stripe resource has a corresponding client:
+Every Stripe resource has a corresponding client type:
 
 ```swift
 extension Stripe.Customers {
