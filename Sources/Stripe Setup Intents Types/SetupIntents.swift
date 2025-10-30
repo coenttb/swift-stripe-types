@@ -6,9 +6,9 @@
 //
 
 import Foundation
-@_exported import Stripe_Types_Shared
 import Stripe_Types_Models
+@_exported import Stripe_Types_Shared
 
 extension Stripe.Setup {
-    public enum Intents: Hashable, Sendable {}
+  public enum Intents: Hashable, Sendable {}
 }
