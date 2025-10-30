@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE.md)
 [![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](https://github.com/coenttb/swift-stripe-types/releases)
 
-Comprehensive type definitions and protocols for Stripe's API in Swift, providing complete type safety and compile-time guarantees.
+Comprehensive type definitions for Stripe's API in Swift, providing complete type safety and compile-time guarantees.
 
 ## Overview
 
@@ -46,13 +46,13 @@ let createCustomer = Stripe.Customers.Create.Request(
     name: "John Doe"
 )
 
-// Client protocol definition (implementations in swift-stripe-live)
-let _: Stripe.Customers.Client.Type = Stripe.Customers.Client.self
+// Client definition (implementations in swift-stripe-live)
+let client: Stripe.Customers.Client = Stripe.Customers.Client(...)
 ```
 
-### Client Protocols
+### Client
 
-Every Stripe resource has a corresponding client protocol:
+Every Stripe resource has a corresponding client:
 
 ```swift
 extension Stripe.Customers {
@@ -222,9 +222,9 @@ struct TestError: Error {}
 
 ## Related Packages
 
-- [swift-stripe-live](https://github.com/coenttb/swift-stripe-live): Live implementations (AGPL/Commercial)
-- [swift-stripe](https://github.com/coenttb/swift-stripe): High-level client wrapper
-- [swift-types-foundation](https://github.com/coenttb/swift-types-foundation): Foundation types
+- [swift-stripe](https://github.com/coenttb/swift-stripe): The Swift library for the Stripe API.
+- [swift-stripe-live](https://github.com/coenttb/swift-stripe-live): A Swift package with live implementations for the Stripe API.
+- [swift-types-foundation](https://github.com/coenttb/swift-types-foundation): A Swift package bundling essential type-safe packages for domain modeling.
 
 ## Requirements
 
