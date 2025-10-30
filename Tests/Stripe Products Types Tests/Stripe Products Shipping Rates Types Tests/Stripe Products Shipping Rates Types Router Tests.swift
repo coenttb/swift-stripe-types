@@ -30,7 +30,7 @@ struct ProductsShippingRatesRouterTests {
     @Test("Retrieve shipping rate")
     func retrieveShippingRate() throws {
         let shippingRateId: Stripe.Products.Shipping.Rate.ID = "shr_123"
-        let api = Stripe.Products.ShippingRates.API.retrieve(id: Stripe.Products.ShippingRateId)
+        let api = Stripe.Products.ShippingRates.API.retrieve(id: shippingRateId)
         
         let url = router.url(for: api)
         #expect(url.path == "/v1/shipping_rates/shr_123")
@@ -53,7 +53,7 @@ struct ProductsShippingRatesRouterTests {
             active: false,
             taxBehavior: .inclusive
         )
-        let api = Stripe.Products.ShippingRates.API.update(id: Stripe.Products.ShippingRateId, request: request)
+        let api = Stripe.Products.ShippingRates.API.update(id: shippingRateId, request: request)
         
         let url = router.url(for: api)
         #expect(url.path == "/v1/shipping_rates/shr_123")
@@ -134,7 +134,7 @@ struct ProductsShippingRatesRouterTests {
         let request = Stripe.Products.ShippingRates.Update.Request(
             fixedAmount: .init(currencyOptions: currencyOptions)
         )
-        let api = Stripe.Products.ShippingRates.API.update(id: Stripe.Products.ShippingRateId, request: request)
+        let api = Stripe.Products.ShippingRates.API.update(id: shippingRateId, request: request)
         
         let urlRequest = try router.request(for: api)
         #expect(urlRequest.url?.path == "/v1/shipping_rates/shr_123")

@@ -8,12 +8,12 @@ import Tagged
 
 @Suite("Confirmation Token Router Tests")
 struct ConfirmationTokenRouterTests {
-    let router = Stripe.ConfirmationTokenAPI.Router()
+    let router = Stripe.ConfirmationToken.API.Router()
     
     @Test("Retrieve confirmation token URL generation")
     func testRetrieveURL() throws {
         let id = ConfirmationToken.ID("cfrm_1234567890")
-        let api = Stripe.ConfirmationTokenAPI.retrieve(id: id)
+        let api = Stripe.ConfirmationToken.API.retrieve(id: id)
         
         let url = router.url(for: api)
         
@@ -23,7 +23,7 @@ struct ConfirmationTokenRouterTests {
     @Test("Parse retrieve confirmation token URL")
     func testParseRetrieveURL() throws {
         let id = ConfirmationToken.ID("cfrm_test123")
-        let api = Stripe.ConfirmationTokenAPI.retrieve(id: id)
+        let api = Stripe.ConfirmationToken.API.retrieve(id: id)
         let request = try router.request(for: api)
         
         let parsedAPI = try router.match(request: request)
@@ -32,12 +32,12 @@ struct ConfirmationTokenRouterTests {
             Issue.record("Expected retrieve case")
             return
         }
-        #expect(parsedid == "cfrm_test123")
+        #expect(parsedId == "cfrm_test123")
     }
     
     @Test("Round-trip URL parsing")
     func testRoundTrip() throws {
-        let original = Stripe.ConfirmationTokenAPI.retrieve(id: ConfirmationToken.ID("cfrm_roundtrip"))
+        let original = Stripe.ConfirmationToken.API.retrieve(id: ConfirmationToken.ID("cfrm_roundtrip"))
         let request = try router.request(for: original)
         let parsed = try router.match(request: request)
         

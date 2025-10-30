@@ -13,7 +13,7 @@ struct CreditGrantRouterTests {
     func testCreateRoute() throws {
         let request = Stripe.Billing.Credit.Grant.Create.Request(
             amount: .init(
-                monetary: .init(currency: "usd", value: 1000),
+                monetary: .init(currency: .usd, value: 1000),
                 type: "monetary"
             ),
             applicabilityConfig: .init(

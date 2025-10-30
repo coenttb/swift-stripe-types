@@ -37,8 +37,8 @@ import StripeCustomersTypes
 import StripePaymentIntentsTypes
 
 // Type-safe resource IDs
-let customerId: Stripe.Customer.ID = "cus_123"
-let paymentIntentId: Stripe.PaymentIntent.ID = "pi_456"
+let customerId: Stripe.Customers.Customer.ID = "cus_123"
+let paymentIntentId: Stripe.PaymentIntents.PaymentIntent.ID = "pi_456"
 
 // Strongly-typed requests
 let createCustomer = Stripe.Customers.Create.Request(
@@ -46,8 +46,8 @@ let createCustomer = Stripe.Customers.Create.Request(
     name: "John Doe"
 )
 
-// Protocol-based clients for dependency injection
-@Dependency(\.stripeCustomers) var customersClient
+// Client protocol definition (implementations in swift-stripe-live)
+let _: Stripe.Customers.Client.Type = Stripe.Customers.Client.self
 ```
 
 ### Client Protocols
@@ -187,24 +187,37 @@ public struct Router: ParserPrinter, Sendable {
 The types are designed for easy testing with mock implementations:
 
 ```swift
-import StripeTypes
-import Dependencies
+import StripeCustomersTypes
+import Testing
 
 @Test
 func testCustomerCreation() async throws {
-    await withDependencies {
-        $0.stripeCustomers.create = { request in
+    // Create a mock client
+    let mockClient = Stripe.Customers.Client(
+        create: { request in
             // Return mock customer
-            Stripe.Customer(
+            Stripe.Customers.Customer(
                 id: "cus_test",
                 email: request.email,
                 name: request.name
             )
-        }
-    } operation: {
-        // Test your code
-    }
+        },
+        retrieve: { _ in throw TestError() },
+        update: { _, _ in throw TestError() },
+        list: { _ in throw TestError() },
+        delete: { _ in throw TestError() }
+    )
+
+    // Test with mock
+    let request = Stripe.Customers.Create.Request(
+        email: "test@example.com",
+        name: "Test User"
+    )
+    let customer = try await mockClient.create(request)
+    #expect(customer.id.rawValue == "cus_test")
 }
+
+struct TestError: Error {}
 ```
 
 ## Related Packages

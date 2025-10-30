@@ -56,7 +56,7 @@ struct PriceRouterTests {
 
         let listRequest = Stripe.Products.Prices.List.Request(
             active: true,
-            currency: "usd",
+            currency: .usd,
             limit: 10,
             product: "prod_123"
         )

@@ -63,7 +63,7 @@ extension Stripe {
         case setupAttempts(Stripe.Setup.Attempts.API)
         case payouts(Stripe.Payouts.API)
         case refunds(Stripe.Refunds.API)
-        case confirmationToken(Stripe.ConfirmationTokenAPI)
+        case confirmationToken(Stripe.ConfirmationToken.API)
         case tokens(Stripe.Tokens.API)
         case paymentMethods(Stripe.PaymentMethods.API)
         case products(Stripe.Products.API)
@@ -143,7 +143,7 @@ extension Stripe.API {
                     Stripe.Refunds.API.Router()
                 }
                 URLRouting.Route(.case(Stripe.API.confirmationToken)) {
-                    Stripe.ConfirmationTokenAPI.Router()
+                    Stripe.ConfirmationToken.API.Router()
                 }
                 URLRouting.Route(.case(Stripe.API.tokens)) {
                     Stripe.Tokens.API.Router()

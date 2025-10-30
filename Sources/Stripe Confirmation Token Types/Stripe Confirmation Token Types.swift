@@ -4,10 +4,19 @@ import Stripe_Types_Shared
 
 extension Stripe {
     // https://docs.stripe.com/api/confirmation_tokens/retrieve.md
-    public enum ConfirmationTokenRetrieve {}
+    public struct ConfirmationToken: Sendable, Hashable, Identifiable {
+        public typealias ID = Tagged<Self, String>
+        
+        public let id: ID
+        
+        public init(id: ID) {
+            self.id = id
+        }
+    }
 }
 
-extension Stripe.ConfirmationTokenRetrieve {
-    // Retrieve operation doesn't have a request body, only the ID in the path
-    // Response is the ConfirmationToken object itself
+extension Stripe.ConfirmationToken {
+    enum Retrieve {
+        
+    }
 }
