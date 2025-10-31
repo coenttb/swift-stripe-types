@@ -11,12 +11,12 @@ Comprehensive type definitions for Stripe's API in Swift, providing complete typ
 
 `swift-stripe-types` provides strongly-typed definitions for Stripe's REST API with:
 
-- 🎯 **Type Safety**: Tagged IDs prevent mixing different resource identifiers
-- 📦 **48 Modules Implemented**: Complete coverage of essential Stripe features
-- 🔌 **Client Types**: Clean separation between types and implementations
-- ⚡ **Swift 6.0**: Full concurrency support with Sendable conformance
-- 🧪 **Testable**: Dependency injection via swift-dependencies
-- 📄 **Apache 2.0**: Maximum compatibility for all projects
+- **Type Safety**: Tagged IDs prevent mixing different resource identifiers
+- **48 Modules Implemented**: Complete coverage of essential Stripe features
+- **Client Types**: Clean separation between types and implementations
+- **Swift 6.0**: Full concurrency support with Sendable conformance
+- **Testable**: Dependency injection via swift-dependencies
+- **Apache 2.0**: Maximum compatibility for all projects
 
 ## Installation
 
