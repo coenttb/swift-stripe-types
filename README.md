@@ -223,9 +223,19 @@ struct TestError: Error {}
 
 ## Related Packages
 
+### Dependencies
+
+- [swift-types-foundation](https://github.com/coenttb/swift-types-foundation): A Swift package bundling essential type-safe packages for domain modeling.
+
+### Used By
+
 - [swift-stripe](https://github.com/coenttb/swift-stripe): The Swift library for the Stripe API.
 - [swift-stripe-live](https://github.com/coenttb/swift-stripe-live): A Swift package with live implementations for the Stripe API.
-- [swift-types-foundation](https://github.com/coenttb/swift-types-foundation): A Swift package bundling essential type-safe packages for domain modeling.
+
+### Third-Party Dependencies
+
+- [pointfreeco/swift-dependencies](https://github.com/pointfreeco/swift-dependencies): A dependency management library for controlling dependencies in Swift.
+- [pointfreeco/swift-tagged](https://github.com/pointfreeco/swift-tagged): A wrapper type for safer, expressive code.
 
 ## Requirements
 
