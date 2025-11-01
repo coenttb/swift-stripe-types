@@ -8,7 +8,3 @@
 @_exported import DependenciesMacros
 @_exported import Tagged
 @_exported import TypesFoundation
-
-#if canImport(FoundationNetworking)
-@_exported import FoundationNetworking
-#endif
