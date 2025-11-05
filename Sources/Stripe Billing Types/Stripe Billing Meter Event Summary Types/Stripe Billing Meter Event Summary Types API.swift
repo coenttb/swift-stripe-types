@@ -12,60 +12,63 @@ import Stripe_Types_Shared
 import URLFormCodingURLRouting
 
 extension Stripe.Billing.MeterEventSummary {
-  @CasePathable
-  @dynamicMemberLookup
-  public enum API: Equatable, Sendable {
-    // https://docs.stripe.com/api/billing/meter-event-summary/list.md
-    case list(meterId: String, request: List.Request)
-  }
+    @CasePathable
+    @dynamicMemberLookup
+    public enum API: Equatable, Sendable {
+        // https://docs.stripe.com/api/billing/meter-event-summary/list.md
+        case list(meterId: String, request: List.Request)
+    }
 }
 
 extension Stripe.Billing.MeterEventSummary.API {
-  public struct Router: ParserPrinter, Sendable {
-    public init() {}
+    public struct Router: ParserPrinter, Sendable {
+        public init() {}
 
-    public var body: some URLRouting.Router<Stripe.Billing.MeterEventSummary.API> {
-      OneOf {
-        Route(.case(Stripe.Billing.MeterEventSummary.API.list)) {
-          Method.get
-          Path.v1
-          Path.billing
-          Path.meters
-          Path { Parse(.string) }
-          Path.event_summaries
-          Parse(.memberwise(Stripe.Billing.MeterEventSummary.List.Request.init)) {
-            Query {
-              Field("customer") { Parse(.string.representing(Stripe.Customers.Customer.ID.self)) }
-              Field("start_time") { Digits() }
-              Field("end_time") { Digits() }
-              Optionally {
-                Field("value_grouping_window") {
-                  Parse(
-                    .string.representing(
-                      Stripe.Billing.MeterEventSummary.List.Request.ValueGroupingWindow.self
-                    )
-                  )
+        public var body: some URLRouting.Router<Stripe.Billing.MeterEventSummary.API> {
+            OneOf {
+                Route(.case(Stripe.Billing.MeterEventSummary.API.list)) {
+                    Method.get
+                    Path.v1
+                    Path.billing
+                    Path.meters
+                    Path { Parse(.string) }
+                    Path.event_summaries
+                    Parse(.memberwise(Stripe.Billing.MeterEventSummary.List.Request.init)) {
+                        Query {
+                            Field("customer") {
+                                Parse(.string.representing(Stripe.Customers.Customer.ID.self))
+                            }
+                            Field("start_time") { Digits() }
+                            Field("end_time") { Digits() }
+                            Optionally {
+                                Field("value_grouping_window") {
+                                    Parse(
+                                        .string.representing(
+                                            Stripe.Billing.MeterEventSummary.List.Request
+                                                .ValueGroupingWindow.self
+                                        )
+                                    )
+                                }
+                            }
+                            Optionally {
+                                Field("ending_before") { Parse(.string) }
+                            }
+                            Optionally {
+                                Field("limit") { Digits() }
+                            }
+                            Optionally {
+                                Field("starting_after") { Parse(.string) }
+                            }
+                        }
+                    }
                 }
-              }
-              Optionally {
-                Field("ending_before") { Parse(.string) }
-              }
-              Optionally {
-                Field("limit") { Digits() }
-              }
-              Optionally {
-                Field("starting_after") { Parse(.string) }
-              }
             }
-          }
         }
-      }
     }
-  }
 }
 
 extension Path<PathBuilder.Component<String>> {
-  public static let event_summaries = Path {
-    "event_summaries"
-  }
+    public static let event_summaries = Path {
+        "event_summaries"
+    }
 }

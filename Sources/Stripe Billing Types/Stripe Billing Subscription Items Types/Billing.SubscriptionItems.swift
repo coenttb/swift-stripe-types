@@ -10,13 +10,13 @@ import Foundation
 import Tagged
 
 extension Stripe.Billing {
-  public enum SubscriptionItems {}
+    public enum SubscriptionItems {}
 }
 
 extension Stripe.Billing.SubscriptionItems {
-  public struct SubscriptionItem: Codable, Equatable, Sendable, Identifiable {
-    public let id: ID
+    public struct SubscriptionItem: Codable, Equatable, Sendable, Identifiable {
+        public let id: ID
 
-    public typealias ID = Tagged<Self, String>
-  }
+        public typealias ID = Tagged<Self, String>
+    }
 }

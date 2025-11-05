@@ -11,17 +11,18 @@ import Stripe_Types_Models
 import Stripe_Types_Shared
 
 extension Stripe.BalanceTransactions {
-  @DependencyClient
-  public struct Client: Sendable {
-    // https://docs.stripe.com/api/balance_transactions/retrieve.md
-    @DependencyEndpoint
-    public var retrieve:
-      @Sendable (_ id: Stripe.Balance.Transaction.ID) async throws -> Stripe.Balance.Transaction
+    @DependencyClient
+    public struct Client: Sendable {
+        // https://docs.stripe.com/api/balance_transactions/retrieve.md
+        @DependencyEndpoint
+        public var retrieve:
+            @Sendable (_ id: Stripe.Balance.Transaction.ID) async throws ->
+                Stripe.Balance.Transaction
 
-    // https://docs.stripe.com/api/balance_transactions/list.md
-    @DependencyEndpoint
-    public var list:
-      @Sendable (_ request: Stripe.BalanceTransactions.List.Request) async throws ->
-        Stripe.BalanceTransactions.List.Response
-  }
+        // https://docs.stripe.com/api/balance_transactions/list.md
+        @DependencyEndpoint
+        public var list:
+            @Sendable (_ request: Stripe.BalanceTransactions.List.Request) async throws ->
+                Stripe.BalanceTransactions.List.Response
+    }
 }

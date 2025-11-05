@@ -10,231 +10,231 @@ import Stripe_Types_Models
 import Stripe_Types_Shared
 
 extension Stripe.Billing.Meters {
-  // Placeholder for the Meter model - should be replaced with actual model from Stripe Types Models
-  public struct Meter: Codable, Equatable, Sendable, Identifiable {
-    public typealias ID = Tagged<Self, String>
+    // Placeholder for the Meter model - should be replaced with actual model from Stripe Types Models
+    public struct Meter: Codable, Equatable, Sendable, Identifiable {
+        public typealias ID = Tagged<Self, String>
 
-    public let id: ID
-    public let object: String
-    public let created: Date
-    public let displayName: String
-    public let eventName: String
-    public let eventTimeWindow: EventTimeWindow?
-    public let status: Status
-    public let updated: Date
+        public let id: ID
+        public let object: String
+        public let created: Date
+        public let displayName: String
+        public let eventName: String
+        public let eventTimeWindow: EventTimeWindow?
+        public let status: Status
+        public let updated: Date
 
-    public init(
-      id: ID,
-      object: String,
-      created: Date,
-      displayName: String,
-      eventName: String,
-      eventTimeWindow: EventTimeWindow?,
-      status: Status,
-      updated: Date
-    ) {
-      self.id = id
-      self.object = object
-      self.created = created
-      self.displayName = displayName
-      self.eventName = eventName
-      self.eventTimeWindow = eventTimeWindow
-      self.status = status
-      self.updated = updated
+        public init(
+            id: ID,
+            object: String,
+            created: Date,
+            displayName: String,
+            eventName: String,
+            eventTimeWindow: EventTimeWindow?,
+            status: Status,
+            updated: Date
+        ) {
+            self.id = id
+            self.object = object
+            self.created = created
+            self.displayName = displayName
+            self.eventName = eventName
+            self.eventTimeWindow = eventTimeWindow
+            self.status = status
+            self.updated = updated
+        }
+
+        private enum CodingKeys: String, CodingKey {
+            case id
+            case object
+            case created
+            case displayName = "display_name"
+            case eventName = "event_name"
+            case eventTimeWindow = "event_time_window"
+            case status
+            case updated
+        }
     }
 
-    private enum CodingKeys: String, CodingKey {
-      case id
-      case object
-      case created
-      case displayName = "display_name"
-      case eventName = "event_name"
-      case eventTimeWindow = "event_time_window"
-      case status
-      case updated
-    }
-  }
-
-  public enum Status: String, Codable, Equatable, Sendable {
-    case active
-    case inactive
-  }
-
-  public enum EventTimeWindow: String, Codable, Equatable, Sendable {
-    case hour
-    case day
-  }
-
-  public struct DefaultAggregation: Codable, Equatable, Sendable {
-    public var formula: Formula
-
-    public init(formula: Formula) {
-      self.formula = formula
-    }
-  }
-
-  public enum Formula: String, Codable, Equatable, Sendable {
-    case count
-    case sum
-  }
-
-  public struct ValueSettings: Codable, Equatable, Sendable {
-    public var eventPayloadKey: String
-
-    public init(eventPayloadKey: String) {
-      self.eventPayloadKey = eventPayloadKey
+    public enum Status: String, Codable, Equatable, Sendable {
+        case active
+        case inactive
     }
 
-    private enum CodingKeys: String, CodingKey {
-      case eventPayloadKey = "event_payload_key"
-    }
-  }
-
-  public struct CustomerMapping: Codable, Equatable, Sendable {
-    public var eventPayloadKey: String
-    public var type: CustomerMappingType
-
-    public init(eventPayloadKey: String, type: CustomerMappingType) {
-      self.eventPayloadKey = eventPayloadKey
-      self.type = type
+    public enum EventTimeWindow: String, Codable, Equatable, Sendable {
+        case hour
+        case day
     }
 
-    private enum CodingKeys: String, CodingKey {
-      case eventPayloadKey = "event_payload_key"
-      case type
-    }
-  }
+    public struct DefaultAggregation: Codable, Equatable, Sendable {
+        public var formula: Formula
 
-  public enum CustomerMappingType: String, Codable, Equatable, Sendable {
-    case byId = "by_id"
-  }
+        public init(formula: Formula) {
+            self.formula = formula
+        }
+    }
+
+    public enum Formula: String, Codable, Equatable, Sendable {
+        case count
+        case sum
+    }
+
+    public struct ValueSettings: Codable, Equatable, Sendable {
+        public var eventPayloadKey: String
+
+        public init(eventPayloadKey: String) {
+            self.eventPayloadKey = eventPayloadKey
+        }
+
+        private enum CodingKeys: String, CodingKey {
+            case eventPayloadKey = "event_payload_key"
+        }
+    }
+
+    public struct CustomerMapping: Codable, Equatable, Sendable {
+        public var eventPayloadKey: String
+        public var type: CustomerMappingType
+
+        public init(eventPayloadKey: String, type: CustomerMappingType) {
+            self.eventPayloadKey = eventPayloadKey
+            self.type = type
+        }
+
+        private enum CodingKeys: String, CodingKey {
+            case eventPayloadKey = "event_payload_key"
+            case type
+        }
+    }
+
+    public enum CustomerMappingType: String, Codable, Equatable, Sendable {
+        case byId = "by_id"
+    }
 }
 
 extension Stripe.Billing.Meters {
-  // https://docs.stripe.com/api/billing/meter/create.md
-  public enum Create {}
+    // https://docs.stripe.com/api/billing/meter/create.md
+    public enum Create {}
 }
 
 extension Stripe.Billing.Meters.Create {
-  public struct Request: Codable, Equatable, Sendable {
-    public var displayName: String
-    public var eventName: String
-    public var defaultAggregation: Stripe.Billing.Meters.DefaultAggregation?
-    public var eventTimeWindow: Stripe.Billing.Meters.EventTimeWindow?
-    public var valueSettings: Stripe.Billing.Meters.ValueSettings?
-    public var customerMapping: Stripe.Billing.Meters.CustomerMapping?
+    public struct Request: Codable, Equatable, Sendable {
+        public var displayName: String
+        public var eventName: String
+        public var defaultAggregation: Stripe.Billing.Meters.DefaultAggregation?
+        public var eventTimeWindow: Stripe.Billing.Meters.EventTimeWindow?
+        public var valueSettings: Stripe.Billing.Meters.ValueSettings?
+        public var customerMapping: Stripe.Billing.Meters.CustomerMapping?
 
-    public init(
-      displayName: String,
-      eventName: String,
-      defaultAggregation: Stripe.Billing.Meters.DefaultAggregation? = nil,
-      eventTimeWindow: Stripe.Billing.Meters.EventTimeWindow? = nil,
-      valueSettings: Stripe.Billing.Meters.ValueSettings? = nil,
-      customerMapping: Stripe.Billing.Meters.CustomerMapping? = nil
-    ) {
-      self.displayName = displayName
-      self.eventName = eventName
-      self.defaultAggregation = defaultAggregation
-      self.eventTimeWindow = eventTimeWindow
-      self.valueSettings = valueSettings
-      self.customerMapping = customerMapping
-    }
+        public init(
+            displayName: String,
+            eventName: String,
+            defaultAggregation: Stripe.Billing.Meters.DefaultAggregation? = nil,
+            eventTimeWindow: Stripe.Billing.Meters.EventTimeWindow? = nil,
+            valueSettings: Stripe.Billing.Meters.ValueSettings? = nil,
+            customerMapping: Stripe.Billing.Meters.CustomerMapping? = nil
+        ) {
+            self.displayName = displayName
+            self.eventName = eventName
+            self.defaultAggregation = defaultAggregation
+            self.eventTimeWindow = eventTimeWindow
+            self.valueSettings = valueSettings
+            self.customerMapping = customerMapping
+        }
 
-    private enum CodingKeys: String, CodingKey {
-      case displayName = "display_name"
-      case eventName = "event_name"
-      case defaultAggregation = "default_aggregation"
-      case eventTimeWindow = "event_time_window"
-      case valueSettings = "value_settings"
-      case customerMapping = "customer_mapping"
+        private enum CodingKeys: String, CodingKey {
+            case displayName = "display_name"
+            case eventName = "event_name"
+            case defaultAggregation = "default_aggregation"
+            case eventTimeWindow = "event_time_window"
+            case valueSettings = "value_settings"
+            case customerMapping = "customer_mapping"
+        }
     }
-  }
 }
 
 extension Stripe.Billing.Meters {
-  // https://docs.stripe.com/api/billing/meter/update.md
-  public enum Update {}
+    // https://docs.stripe.com/api/billing/meter/update.md
+    public enum Update {}
 }
 
 extension Stripe.Billing.Meters.Update {
-  public struct Request: Codable, Equatable, Sendable {
-    public var displayName: String?
+    public struct Request: Codable, Equatable, Sendable {
+        public var displayName: String?
 
-    public init(displayName: String? = nil) {
-      self.displayName = displayName
-    }
+        public init(displayName: String? = nil) {
+            self.displayName = displayName
+        }
 
-    private enum CodingKeys: String, CodingKey {
-      case displayName = "display_name"
+        private enum CodingKeys: String, CodingKey {
+            case displayName = "display_name"
+        }
     }
-  }
 }
 
 extension Stripe.Billing.Meters {
-  // https://docs.stripe.com/api/billing/meter/list.md
-  public enum List {}
+    // https://docs.stripe.com/api/billing/meter/list.md
+    public enum List {}
 }
 
 extension Stripe.Billing.Meters.List {
-  public struct Request: Codable, Equatable, Sendable {
-    public var endingBefore: String?
-    public var limit: Int?
-    public var startingAfter: String?
-    public var status: Stripe.Billing.Meters.Status?
+    public struct Request: Codable, Equatable, Sendable {
+        public var endingBefore: String?
+        public var limit: Int?
+        public var startingAfter: String?
+        public var status: Stripe.Billing.Meters.Status?
 
-    public init(
-      endingBefore: String? = nil,
-      limit: Int? = nil,
-      startingAfter: String? = nil,
-      status: Stripe.Billing.Meters.Status? = nil
-    ) {
-      self.endingBefore = endingBefore
-      self.limit = limit
-      self.startingAfter = startingAfter
-      self.status = status
+        public init(
+            endingBefore: String? = nil,
+            limit: Int? = nil,
+            startingAfter: String? = nil,
+            status: Stripe.Billing.Meters.Status? = nil
+        ) {
+            self.endingBefore = endingBefore
+            self.limit = limit
+            self.startingAfter = startingAfter
+            self.status = status
+        }
+
+        private enum CodingKeys: String, CodingKey {
+            case endingBefore = "ending_before"
+            case limit
+            case startingAfter = "starting_after"
+            case status
+        }
     }
 
-    private enum CodingKeys: String, CodingKey {
-      case endingBefore = "ending_before"
-      case limit
-      case startingAfter = "starting_after"
-      case status
-    }
-  }
+    public struct Response: Codable, Sendable {
+        public let object: String
+        public let url: String
+        public let hasMore: Bool
+        public let data: [Stripe.Billing.Meters.Meter]
 
-  public struct Response: Codable, Sendable {
-    public let object: String
-    public let url: String
-    public let hasMore: Bool
-    public let data: [Stripe.Billing.Meters.Meter]
-
-    private enum CodingKeys: String, CodingKey {
-      case object
-      case url
-      case hasMore = "has_more"
-      case data
+        private enum CodingKeys: String, CodingKey {
+            case object
+            case url
+            case hasMore = "has_more"
+            case data
+        }
     }
-  }
 }
 
 extension Stripe.Billing.Meters {
-  // https://docs.stripe.com/api/billing/meter/deactivate.md
-  public enum Deactivate {}
+    // https://docs.stripe.com/api/billing/meter/deactivate.md
+    public enum Deactivate {}
 }
 
 extension Stripe.Billing.Meters.Deactivate {
-  public struct Request: Codable, Equatable, Sendable {
-    public init() {}
-  }
+    public struct Request: Codable, Equatable, Sendable {
+        public init() {}
+    }
 }
 
 extension Stripe.Billing.Meters {
-  // https://docs.stripe.com/api/billing/meter/reactivate.md
-  public enum Reactivate {}
+    // https://docs.stripe.com/api/billing/meter/reactivate.md
+    public enum Reactivate {}
 }
 
 extension Stripe.Billing.Meters.Reactivate {
-  public struct Request: Codable, Equatable, Sendable {
-    public init() {}
-  }
+    public struct Request: Codable, Equatable, Sendable {
+        public init() {}
+    }
 }

@@ -3,43 +3,43 @@ import Stripe_Types_Models
 import Stripe_Types_Shared
 
 extension Stripe.Billing.Credit.Balance {
-  // https://docs.stripe.com/api/billing/credit-balance-transaction/list.md
-  public enum List {}
+    // https://docs.stripe.com/api/billing/credit-balance-transaction/list.md
+    public enum List {}
 }
 
 extension Stripe.Billing.Credit.Balance.List {
-  public struct Request: Codable, Equatable, Sendable {
-    /// Only return credit balance transactions for this customer.
-    public let customer: Stripe.Customers.Customer.ID
-    /// Only return credit balance transactions for this credit grant.
-    public let creditGrant: String?
-    /// A cursor for use in pagination. ending_before is an object ID that defines your place in the list.
-    public let endingBefore: String?
-    /// A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.
-    public let limit: Int?
-    /// A cursor for use in pagination. starting_after is an object ID that defines your place in the list.
-    public let startingAfter: String?
+    public struct Request: Codable, Equatable, Sendable {
+        /// Only return credit balance transactions for this customer.
+        public let customer: Stripe.Customers.Customer.ID
+        /// Only return credit balance transactions for this credit grant.
+        public let creditGrant: String?
+        /// A cursor for use in pagination. ending_before is an object ID that defines your place in the list.
+        public let endingBefore: String?
+        /// A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.
+        public let limit: Int?
+        /// A cursor for use in pagination. starting_after is an object ID that defines your place in the list.
+        public let startingAfter: String?
 
-    public init(
-      customer: Stripe.Customers.Customer.ID,
-      creditGrant: String? = nil,
-      endingBefore: String? = nil,
-      limit: Int? = nil,
-      startingAfter: String? = nil
-    ) {
-      self.customer = customer
-      self.creditGrant = creditGrant
-      self.endingBefore = endingBefore
-      self.limit = limit
-      self.startingAfter = startingAfter
-    }
+        public init(
+            customer: Stripe.Customers.Customer.ID,
+            creditGrant: String? = nil,
+            endingBefore: String? = nil,
+            limit: Int? = nil,
+            startingAfter: String? = nil
+        ) {
+            self.customer = customer
+            self.creditGrant = creditGrant
+            self.endingBefore = endingBefore
+            self.limit = limit
+            self.startingAfter = startingAfter
+        }
 
-    private enum CodingKeys: String, CodingKey {
-      case customer
-      case creditGrant = "credit_grant"
-      case endingBefore = "ending_before"
-      case limit
-      case startingAfter = "starting_after"
+        private enum CodingKeys: String, CodingKey {
+            case customer
+            case creditGrant = "credit_grant"
+            case endingBefore = "ending_before"
+            case limit
+            case startingAfter = "starting_after"
+        }
     }
-  }
 }

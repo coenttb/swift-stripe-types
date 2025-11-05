@@ -41,95 +41,95 @@ import Stripe_Types_Shared
 //}
 
 extension Stripe.Billing.TestClocks {
-  // https://docs.stripe.com/api/test_clocks/create.md
-  public enum Create {}
+    // https://docs.stripe.com/api/test_clocks/create.md
+    public enum Create {}
 }
 
 extension Stripe.Billing.TestClocks.Create {
-  public struct Request: Codable, Equatable, Sendable {
-    /// The initial frozen time for the test clock (Unix timestamp)
-    public var frozenTime: Int
-    /// An optional name for the test clock
-    public var name: String?
+    public struct Request: Codable, Equatable, Sendable {
+        /// The initial frozen time for the test clock (Unix timestamp)
+        public var frozenTime: Int
+        /// An optional name for the test clock
+        public var name: String?
 
-    public init(
-      frozenTime: Int,
-      name: String? = nil
-    ) {
-      self.frozenTime = frozenTime
-      self.name = name
-    }
+        public init(
+            frozenTime: Int,
+            name: String? = nil
+        ) {
+            self.frozenTime = frozenTime
+            self.name = name
+        }
 
-    private enum CodingKeys: String, CodingKey {
-      case frozenTime = "frozen_time"
-      case name
+        private enum CodingKeys: String, CodingKey {
+            case frozenTime = "frozen_time"
+            case name
+        }
     }
-  }
 }
 
 extension Stripe.Billing.TestClocks {
-  // https://docs.stripe.com/api/test_clocks/list.md
-  public enum List {}
+    // https://docs.stripe.com/api/test_clocks/list.md
+    public enum List {}
 }
 
 extension Stripe.Billing.TestClocks.List {
-  public struct Request: Codable, Equatable, Sendable {
-    /// Pagination cursor for previous page
-    public var endingBefore: String?
-    /// Number of objects to return (1-100, default 10)
-    public var limit: Int?
-    /// Pagination cursor for next page
-    public var startingAfter: String?
+    public struct Request: Codable, Equatable, Sendable {
+        /// Pagination cursor for previous page
+        public var endingBefore: String?
+        /// Number of objects to return (1-100, default 10)
+        public var limit: Int?
+        /// Pagination cursor for next page
+        public var startingAfter: String?
 
-    public init(
-      endingBefore: String? = nil,
-      limit: Int? = nil,
-      startingAfter: String? = nil
-    ) {
-      self.endingBefore = endingBefore
-      self.limit = limit
-      self.startingAfter = startingAfter
+        public init(
+            endingBefore: String? = nil,
+            limit: Int? = nil,
+            startingAfter: String? = nil
+        ) {
+            self.endingBefore = endingBefore
+            self.limit = limit
+            self.startingAfter = startingAfter
+        }
+
+        private enum CodingKeys: String, CodingKey {
+            case endingBefore = "ending_before"
+            case limit
+            case startingAfter = "starting_after"
+        }
     }
 
-    private enum CodingKeys: String, CodingKey {
-      case endingBefore = "ending_before"
-      case limit
-      case startingAfter = "starting_after"
-    }
-  }
+    public struct Response: Codable, Sendable {
+        public let object: String
+        public let url: String
+        public let hasMore: Bool
+        public let data: [Stripe.Billing.TestClocks.TestClock]
 
-  public struct Response: Codable, Sendable {
-    public let object: String
-    public let url: String
-    public let hasMore: Bool
-    public let data: [Stripe.Billing.TestClocks.TestClock]
-
-    private enum CodingKeys: String, CodingKey {
-      case object
-      case url
-      case hasMore = "has_more"
-      case data
+        private enum CodingKeys: String, CodingKey {
+            case object
+            case url
+            case hasMore = "has_more"
+            case data
+        }
     }
-  }
 }
 
 extension Stripe.Billing.TestClocks {
-  // https://docs.stripe.com/api/test_clocks/advance.md
-  public enum Advance {}
+    // https://docs.stripe.com/api/test_clocks/advance.md
+    public enum Advance {}
 }
 
 extension Stripe.Billing.TestClocks.Advance {
-  public struct Request: Codable, Equatable, Sendable {
-    /// The time to advance the test clock to (Unix timestamp)
-    /// Must be after the test clock's current frozen time
-    public var frozenTime: Int
+    public struct Request: Codable, Equatable, Sendable {
+        /// The time to advance the test clock to (Unix timestamp)
+        /// Must be after the test clock's current frozen time
+        public var frozenTime: Int
 
-    public init(frozenTime: Int) {
-      self.frozenTime = frozenTime
-    }
+        public init(frozenTime: Int) {
+            self.frozenTime = frozenTime
+        }
 
-    private enum CodingKeys: String, CodingKey {
-      case frozenTime = "frozen_time"
+        private enum CodingKeys: String, CodingKey {
+            case frozenTime = "frozen_time"
+        }
     }
-  }
 }

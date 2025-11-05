@@ -9,19 +9,19 @@ import Foundation
 import URLFormCoding
 
 extension Form.Decoder {
-  package static var stripe: Form.Decoder {
-    .init(
-      dateDecodingStrategy: .secondsSince1970,
-      arrayParsingStrategy: .bracketsWithIndices
-    )
-  }
+    package static var stripe: Form.Decoder {
+        .init(
+            dateDecodingStrategy: .secondsSince1970,
+            arrayParsingStrategy: .bracketsWithIndices
+        )
+    }
 }
 
 extension Form.Encoder {
-  package static var stripe: Form.Encoder {
-    .init(
-      dateEncodingStrategy: .secondsSince1970,
-      arrayEncodingStrategy: .bracketsWithIndices
-    )
-  }
+    package static var stripe: Form.Encoder {
+        .init(
+            dateEncodingStrategy: .secondsSince1970,
+            arrayEncodingStrategy: .bracketsWithIndices
+        )
+    }
 }

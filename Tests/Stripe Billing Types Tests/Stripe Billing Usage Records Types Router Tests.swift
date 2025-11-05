@@ -8,77 +8,77 @@ import URLRouting
 
 @Suite("Usage Records Router Tests")
 struct UsageRecordsRouterTests {
-  let router = Stripe.Billing.UsageRecords.API.Router()
-  let subscriptionItemId = Stripe.Billing.SubscriptionItems.SubscriptionItem.ID(
-    rawValue: "si_1234567890"
-  )
-
-  @Test("Create usage record endpoint")
-  func testCreateRoute() throws {
-    let request = Stripe.Billing.UsageRecords.Create.Request(
-      quantity: 100,
-      timestamp: .right(.now)
+    let router = Stripe.Billing.UsageRecords.API.Router()
+    let subscriptionItemId = Stripe.Billing.SubscriptionItems.SubscriptionItem.ID(
+        rawValue: "si_1234567890"
     )
 
-    let api = Stripe.Billing.UsageRecords.API.create(
-      subscriptionItemId: subscriptionItemId,
-      request: request
-    )
+    @Test("Create usage record endpoint")
+    func testCreateRoute() throws {
+        let request = Stripe.Billing.UsageRecords.Create.Request(
+            quantity: 100,
+            timestamp: .right(.now)
+        )
 
-    let url = router.url(for: api)
-    #expect(url.path == "/v1/subscription_items/si_1234567890/usage_records")
+        let api = Stripe.Billing.UsageRecords.API.create(
+            subscriptionItemId: subscriptionItemId,
+            request: request
+        )
 
-    let path = try router.print(api)
-    #expect(path.method == "POST")
+        let url = router.url(for: api)
+        #expect(url.path == "/v1/subscription_items/si_1234567890/usage_records")
 
-    // Test round trip
-    let parsed = try router.parse(path)
-    #expect(parsed == api)
-  }
+        let path = try router.print(api)
+        #expect(path.method == "POST")
 
-  @Test("List usage records endpoint")
-  func testListRoute() throws {
-    let request = Stripe.Billing.UsageRecords.List.Request(
-      limit: 10
-    )
+        // Test round trip
+        let parsed = try router.parse(path)
+        #expect(parsed == api)
+    }
 
-    let api = Stripe.Billing.UsageRecords.API.list(
-      subscriptionItemId: subscriptionItemId,
-      request: request
-    )
+    @Test("List usage records endpoint")
+    func testListRoute() throws {
+        let request = Stripe.Billing.UsageRecords.List.Request(
+            limit: 10
+        )
 
-    let url = router.url(for: api)
-    #expect(url.path == "/v1/subscription_items/si_1234567890/usage_records")
-    #expect(url.query == "limit=10")
+        let api = Stripe.Billing.UsageRecords.API.list(
+            subscriptionItemId: subscriptionItemId,
+            request: request
+        )
 
-    let path = try router.print(api)
-    #expect(path.method == "GET")
+        let url = router.url(for: api)
+        #expect(url.path == "/v1/subscription_items/si_1234567890/usage_records")
+        #expect(url.query == "limit=10")
 
-    // Test round trip
-    let parsed = try router.parse(path)
-    #expect(parsed == api)
-  }
+        let path = try router.print(api)
+        #expect(path.method == "GET")
 
-  @Test("List with pagination")
-  func testListWithPagination() throws {
-    let request = Stripe.Billing.UsageRecords.List.Request(
-      endingBefore: "ur_before",
-      limit: 50,
-      startingAfter: "ur_after"
-    )
+        // Test round trip
+        let parsed = try router.parse(path)
+        #expect(parsed == api)
+    }
 
-    let api = Stripe.Billing.UsageRecords.API.list(
-      subscriptionItemId: subscriptionItemId,
-      request: request
-    )
+    @Test("List with pagination")
+    func testListWithPagination() throws {
+        let request = Stripe.Billing.UsageRecords.List.Request(
+            endingBefore: "ur_before",
+            limit: 50,
+            startingAfter: "ur_after"
+        )
 
-    let url = router.url(for: api)
-    #expect(url.path == "/v1/subscription_items/si_1234567890/usage_records")
-    #expect(url.query?.contains("ending_before=ur_before") == true)
-    #expect(url.query?.contains("limit=50") == true)
-    #expect(url.query?.contains("starting_after=ur_after") == true)
+        let api = Stripe.Billing.UsageRecords.API.list(
+            subscriptionItemId: subscriptionItemId,
+            request: request
+        )
 
-    let path = try router.print(api)
-    #expect(path.method == "GET")
-  }
+        let url = router.url(for: api)
+        #expect(url.path == "/v1/subscription_items/si_1234567890/usage_records")
+        #expect(url.query?.contains("ending_before=ur_before") == true)
+        #expect(url.query?.contains("limit=50") == true)
+        #expect(url.query?.contains("starting_after=ur_after") == true)
+
+        let path = try router.print(api)
+        #expect(path.method == "GET")
+    }
 }

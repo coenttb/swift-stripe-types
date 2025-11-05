@@ -1,0 +1,47 @@
+version: 1
+builder:
+  configs:
+  - documentation_targets:
+    - Stripe Balance Transactions Types
+    - Stripe Balance Types
+    - Stripe Billing Types
+    - Stripe Capital Types
+    - Stripe Charges Types
+    - Stripe Checkout Types
+    - Stripe Climate Types
+    - Stripe Confirmation Token Types
+    - Stripe Connect Types
+    - Stripe Crypto Types
+    - Stripe Customer Session Types
+    - Stripe Customers Types
+    - Stripe Disputes Types
+    - Stripe Entitlements Types
+    - Stripe Event Destinations Types
+    - Stripe Events Types
+    - Stripe File Links Types
+    - Stripe Files Types
+    - Stripe Financial Connections Types
+    - Stripe Forwarding Types
+    - Stripe Fraud Types
+    - Stripe Identity Types
+    - Stripe Issuing Types
+    - Stripe Mandates Types
+    - Stripe Payment Intents Types
+    - Stripe Payment Link Types
+    - Stripe Payment Methods Types
+    - Stripe Payouts Types
+    - Stripe Products Types
+    - Stripe Refunds Types
+    - Stripe Reporting Types
+    - Stripe Setup Attempts Types
+    - Stripe Setup Intents Types
+    - Stripe Sigma Types
+    - Stripe Tax Types
+    - Stripe Terminal Types
+    - Stripe Tokens Types
+    - Stripe Treasury Types
+    - Stripe Types
+    - Stripe Types Models
+    - Stripe Types Shared
+    - Stripe Web Elements Types
+    - Stripe Webhooks Types
