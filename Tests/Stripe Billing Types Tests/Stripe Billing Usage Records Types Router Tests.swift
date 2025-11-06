@@ -1,5 +1,4 @@
 import Foundation
-import Stripe_Billing_Types
 import Stripe_Types_Shared
 import Testing
 import URLRouting
